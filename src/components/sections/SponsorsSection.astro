@@ -1,0 +1,51 @@
+---
+import cediaLogo from "../../assets/cediaLogoBlack.png";
+import guayaquilSpaceSocietyLogo from "../../assets/GuayaquilSpaceSocietyLogo.png";
+import leviathanSpaceLogo from "../../assets/LeviathanSpaceLogo.png";
+import miloSpaceScienceInstituteLogo from "../../assets/miloSpaceScienceInstituteLogo.png";
+import ministerioRelacionesExterioresLogo from "../../assets/MinisterioRelacionesExterioresLogo.png";
+import ministeriosLogo from "../../assets/Ministerios.png";
+import genSpaceLogo from "../../assets/genSpaceLogo.png";
+---
+
+<section class="sponsors-section py-10">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-12">Nuestros Patrocinadores</h2> <!-- Agrega mb-12 para más espacio debajo del h2 -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
+            <div class="flex justify-center items-center">
+                <a href="https://miloinstitute.org/" target="_blank"></a>
+                <img src={miloSpaceScienceInstituteLogo.src} alt="Milo Space Science Institute" class="h-32 object-contain" />
+            </div>
+            <div class="flex justify-center items-center">
+                <a href="https://cedia.edu.ec/" target="_blank"></a>
+                <img src={cediaLogo.src} alt="CEDIA" class="h-32 object-contain" />
+            </div>
+            <div class="flex justify-center items-center">
+                <a href="#" target="_blank"></a>
+                <img src={genSpaceLogo.src} alt="GenSpaceLogo" class="h-32 object-contain" />
+            </div>
+            <div class="flex justify-center items-center">
+                <a href="https://www.gob.ec/mremh" target="_blank"></a>
+                <img src={ministeriosLogo.src} alt="Ministerio de Producción Comercio Exterior Inversiones y Pesca" class="h-32 object-contain" />
+            </div>
+            <div class="w-full lg:hidden"></div>
+            <div class="flex justify-center items-center">
+                <a href="https://www.produccion.gob.ec/" target="_blank"></a>
+                <img src={ministerioRelacionesExterioresLogo.src} alt="Ministerio de Relaciones Exteriores" class="h-32 object-contain" />
+            </div>
+            <div class="flex justify-center items-center">
+                <a href="#" target="_blank"></a>
+                <img src={leviathanSpaceLogo.src} alt="Leviathan Space Industries" class="h-32 object-contain" />
+            </div>
+            <div class="flex justify-center items-center">
+                <a href="https://twitter.com/guayaquilspace" target="_blank"></a>
+                <img src={guayaquilSpaceSocietyLogo.src} alt="Guayaquil Space Society" class="h-32 object-contain" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.sponsors-section img {
+    max-width: 150px;
+}</style>
