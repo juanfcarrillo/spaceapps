@@ -1,0 +1,58 @@
+---
+import TimelineItem from './TimelineItem.astro';
+
+const events = [
+  {
+    title: "Order Placed",
+    date: "08/06/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: true,
+  },
+  {
+    title: "Order Shipped",
+    date: "09/06/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: true,
+  },
+  {
+    title: "In Transit",
+    date: "10/06/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: true,
+  },
+  {
+    title: "Out of Delivery",
+    date: "12/06/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: true,
+  },
+  {
+    title: "Delivered",
+    date: "Exp. 12/08/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: false,
+  },
+];
+---
+
+<ul class="timeline space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+    {events.map((event, index) => (
+      <TimelineItem
+        key={index}
+        title={event.title}
+        date={event.date}
+        description={event.description}
+        isActive={event.isActive}
+        isOdd={index % 2 !== 0}
+      />
+    ))}
+</ul>
+
+<style>
+  @media (max-width: 500px) {
+      .timeline::before {
+        transform: translateX(calc(50vw - 20px));
+      }
+  }
+</style>
+
