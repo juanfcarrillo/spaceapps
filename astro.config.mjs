@@ -11,5 +11,8 @@ export default defineConfig({
       enabled: true
     }
   }),
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  redirects: {
+    '/': '/colegio'
+  }
 });
