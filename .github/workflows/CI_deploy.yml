@@ -6,9 +6,10 @@ on:
       - main
 
 jobs:
-  upload:
+  deploy:
     runs-on: ubuntu-lates
-    name: Deploy
+    name: deploy
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
