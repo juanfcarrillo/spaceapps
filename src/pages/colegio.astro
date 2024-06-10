@@ -22,11 +22,3 @@ import SponsorsSection from "../components/sections/SponsorsSection.astro";
 		<SchoolFormSection />
 	</main>
 </Layout>
-
-<script>
-	const navbar = document.getElementById("navbar");
-	document.addEventListener("scroll", () => {
-		navbar?.classList.toggle("bg-ns-primary-darker", window.scrollY > 36);
-		navbar?.classList.toggle("bg-transparent", window.scrollY < 36);
-	});
-</script>

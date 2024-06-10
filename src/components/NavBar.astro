@@ -1,6 +1,14 @@
+---
+interface Props {
+    transparent?: boolean;
+}
+
+const { transparent } = Astro.props;
+---
+
 <nav
     id="navbar"
-    class="fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between  bg-transparent text-ns-white px-32 py-6 border-solid border-y-0 border-transparent"
+    class=`fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between ${transparent ? 'bg-transparent' : 'bg-ns-primary-darker' } text-ns-white px-32 py-6 border-solid border-y-0 border-transparent`
 >
     <figure class="hidden md:flex items-center w-36">
         <a href="/">
@@ -15,3 +23,14 @@
         <li><a href="/colegio">Colegio</a></li>
     </ul>
 </nav>
+
+<script>
+    const navbar = document.getElementById("navbar");
+
+    const isTransparent = navbar?.classList.contains("bg-transparent");
+
+    isTransparent &&document.addEventListener("scroll", () => {
+        navbar?.classList.toggle("bg-ns-primary-darker", window.scrollY > 36);
+        navbar?.classList.toggle("bg-transparent", window.scrollY < 36);
+    });
+</script>
