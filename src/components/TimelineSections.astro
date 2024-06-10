@@ -1,0 +1,44 @@
+---
+import Timeline from "./timeline/Timeline.astro";
+
+
+const timelineItems = [
+  {
+    title: "Order Placed",
+    date: "08/06/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: true,
+  },
+  {
+    title: "Order Shipped",
+    date: "09/06/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: true,
+  },
+  {
+    title: "In Transit",
+    date: "10/06/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: true,
+  },
+  {
+    title: "Out of Delivery",
+    date: "12/06/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: true,
+  },
+  {
+    title: "Delivered",
+    date: "Exp. 12/08/2023",
+    description: "Pretium lectus quam id leo. Urna et pharetra aliquam vestibulum morbi blandit cursus risus.",
+    isActive: false,
+  },
+];
+---
+
+<section class="flex flex-col gap-8 py-8 md:px-24 md:py-16">
+    <h2 class="text-center text-3xl font-bold">Cronograma de Space Apps</h2>
+    <Timeline
+        timelineItems={timelineItems}
+    />
+</section>

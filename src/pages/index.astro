@@ -3,15 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Rocket from '../assets/3DRocket.png';
 import CTAFull from '../components/CTAFull.astro';
 import Timeline from '../components/timeline/Timeline.astro';
+import TimelineSections from '../components/TimelineSections.astro';
 ---
 
 <Layout title="Space Apps">
 	<main class="w-full h-full bg-ns-primary">
 		<CTAFull image={Rocket} />
-		<section class="flex flex-col gap-8 py-8 md:px-24 md:py-16">
-			<h2 class="text-center text-3xl font-bold">Cronograma de Space Apps</h2>
-			<Timeline/>
-		</section>
+		<TimelineSections />
 	</main>
 </Layout>
 
