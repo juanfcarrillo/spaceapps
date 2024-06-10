@@ -1,0 +1,24 @@
+---
+import PrizeItem from "./PrizeItem.astro";
+---
+
+<ul class="w-full flex flex-col gap-4 md:flex-row md:gap-8 justify-evenly items-center mt-8">
+    <PrizeItem
+    title="Premio de la Comunidad"
+    description="La comunidad de Space Apps ha ganado un premio de la comunidad"
+    number="2"
+    />
+    <div class="md:-translate-y-8 md:order-none order-first">
+        <PrizeItem
+            title="Premio de la Comunidad"
+            description="La comunidad de Space Apps ha ganado un premio de la comunidad"
+            number="1"
+        />
+    </div>
+    <PrizeItem
+        title="Premio de la Comunidad"
+        description="La comunidad de Space Apps ha ganado un premio de la comunidad"
+        number="3"
+    />
+    
+</ul>

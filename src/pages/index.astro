@@ -1,22 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Rocket from '../assets/3DRocket.png';
-import CTAFull from '../components/CTAFull.astro';
-import Timeline from '../components/timeline/Timeline.astro';
-import TimelineSections from '../components/TimelineSections.astro';
+import Layout from "../layouts/Layout.astro";
+import Rocket from "../assets/3DRocket.png";
+import CTAFull from "../components/CTAFull.astro";
+import TimelineSections from "../components/TimelineSections.astro";
+import Divider from "../components/Divider.astro";
+import Prizes from "../components/prize/Prizes.astro";
 ---
 
 <Layout title="Space Apps">
 	<main class="w-full h-full bg-ns-primary">
 		<CTAFull image={Rocket} />
 		<TimelineSections />
+		<Divider />
+		<section class="flex flex-col gap-8 py-8 md:px-24 md:py-16">
+			<h3 class="text-center text-3xl font-bold">Premios</h3>
+			<Prizes />
+		</section>
 	</main>
 </Layout>
 
 <script>
-	const navbar = document.getElementById('navbar');
-	document.addEventListener('scroll', () => {
-		navbar?.classList.toggle('bg-ns-primary-darker', window.scrollY > 36);
-		navbar?.classList.toggle('bg-transparent', window.scrollY < 36);
+	const navbar = document.getElementById("navbar");
+	document.addEventListener("scroll", () => {
+		navbar?.classList.toggle("bg-ns-primary-darker", window.scrollY > 36);
+		navbar?.classList.toggle("bg-transparent", window.scrollY < 36);
 	});
 </script>

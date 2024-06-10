@@ -1,0 +1,15 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    number: string;
+}
+
+const { title, description, number } = Astro.props;
+---
+
+<li class="flex flex-col gap-4 max-w-60 shadow-xl px-6 py-8 rounded-lg">
+    <span class="text-center text-ns-gray-dark text-6xl">{number}º</span>
+    <h5 class="text-center text-xl font-bold">{title}</h5>
+    <p>{description}</p>
+</li>
