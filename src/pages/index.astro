@@ -5,15 +5,20 @@ import CTAFull from "../components/sections/CTAFull.astro";
 import TimelineSections from "../components/sections/TimelineSections.astro";
 import Divider from "../components/Divider.astro";
 import PrizesSections from "../components/sections/PrizesSections.astro";
+import TestForm from "../components/organisms/TestForm.astro";
 ---
 
 <Layout title="Space Apps">
-	<main class="w-full h-full bg-ns-primary">
-		<CTAFull image={Rocket} />
+	<main class="w-full h-full bg-ns-primary scroll-smooth">
+		<CTAFull href="#test-form" title="Condrita Space Apps" image={Rocket} />
 		<TimelineSections />
 		<Divider />
 		<PrizesSections />
 		<Divider />
+		<section class="flex flex-col gap-8 py-8 md:px-24 md:py-16">
+			<h2 class="text-center text-3xl font-bold">Inscríbete!!!</h2>
+			<TestForm />
+		</section>
 	</main>
 </Layout>
 

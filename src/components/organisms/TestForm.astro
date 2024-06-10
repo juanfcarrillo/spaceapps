@@ -1,0 +1,29 @@
+---
+import Button from "../molecules/Button.astro";
+import Input from "../molecules/Input.astro";
+---
+
+<form id="test-form" class="flex flex-col py-8 md:px-24 md:py-16 items-center min-w-96">
+    <Input
+        label="Nombre"
+        id="name"
+        type="text"
+        placeholder="Ingresa tu nombre"
+    />
+
+    <Input
+        label="Email"
+        id="email"
+        type="email"
+        placeholder="Ingresa tu email"
+    />
+
+    <Input
+        label="Telefono"
+        id="phone"
+        type="tel"
+        placeholder="Ingresa tu telefono"
+    />
+
+    <Button label="Inscríbete" type="submit" />
+</form>

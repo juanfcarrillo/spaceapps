@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props {
+    label?: string;
+    id?: string;
+    type?: HTMLAttributes<'input'>['type'];
+    placeholder?: HTMLAttributes<'input'>['placeholder'];
+    required?: boolean;
+}
+
+
+const { label, id, type, placeholder, required } = Astro.props;
+---
+
+<div class="mb-5 w-full">
+    <label
+        for={id}
+        class="block mb-2 text-sm font-medium text-ns-base"
+        >{label}</label
+    >
+    <input
+        type={type ?? "text"}
+        id="email"
+        class="bg-gray-50 border border-gray-300 text-ns-base text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+        placeholder={placeholder ?? "Ingresa"}
+        required={required ?? false}
+    />
+</div>
