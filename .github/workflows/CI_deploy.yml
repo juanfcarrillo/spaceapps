@@ -7,7 +7,7 @@ on:
 
 jobs:
   upload:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lates
     name: Deploy
     steps:
       - name: Checkout
@@ -19,11 +19,13 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+     - name: Install dependencies
+        run: |
+          npm install 
 
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
 
       - name: Upload Worker Version
         uses: cloudflare/wrangler-action@v3
