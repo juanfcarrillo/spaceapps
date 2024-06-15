@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import Rocket from "../assets/3DRocket.png";
-import CTAFull from "../components/sections/CTAFull.astro";
-import TimelineSections from "../components/sections/TimelineSections.astro";
 import Divider from "../components/Divider.astro";
+import FAQ from "../components/faq/FAQ.astro";
+import CTAFull from "../components/sections/CTAFull.astro";
 import PrizesSections from "../components/sections/PrizesSections.astro";
-import TestForm from "../components/organisms/TestForm.astro";
+import ReasonsSection from "../components/sections/ReasonsSection.astro";
 import SchoolFormSection from "../components/sections/SchoolFormSection.astro";
 import SponsorsSection from "../components/sections/SponsorsSection.astro";
+import TimelineSections from "../components/sections/TimelineSections.astro";
 import WhySection from "../components/sections/WhySection.astro";
-import FAQ from "../components/faq/FAQ.astro";
+import Layout from "../layouts/Layout.astro";
 import NeedKnowSection from "../components/sections/NeedKnowSection.astro";
 ---
 
@@ -21,6 +21,9 @@ import NeedKnowSection from "../components/sections/NeedKnowSection.astro";
 			body={`¡La aventura te espera!\nInscríbete al Campamento Espacial más grande del país.`}
 			image={Rocket}
 		/>
+		<Divider />
+		<ReasonsSection />
+		<Divider />
 		<TimelineSections />
 		<Divider />
 		<PrizesSections />
