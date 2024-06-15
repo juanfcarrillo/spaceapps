@@ -35,8 +35,11 @@ const faqs = [
       const questions = document.querySelectorAll('.faq-question');
       questions.forEach(question => {
         question.addEventListener('click', function () {
+
+          //@ts-ignore
           const answer = this.nextElementSibling;
           answer.classList.toggle('hidden');
+          //@ts-ignore
           this.classList.toggle('active');
         });
       });
