@@ -1,16 +1,21 @@
 ---
 interface Props {
     title: string;
-    description: string;
+    description?: string;
     number: string;
+    prices?: string[];
     isFirst?: boolean;
 }
 
-const { title, description, number, isFirst } = Astro.props;
+const { title, description, number, isFirst, prices } = Astro.props;
 ---
 
 <li class=`flex flex-col gap-4 ${isFirst ? 'w-full' : 'w-5/6'} md:w-full md:max-w-60 shadow-xl px-6 py-8 rounded-lg`>
     <span class="text-center text-ns-gray-dark text-6xl">{number}</span>
     <h5 class="text-center text-xl font-bold">{title}</h5>
-    <p>{description}</p>
+    {
+        prices
+            ? prices.map((price) => <p class="text-sm"><span class="text-2xl">•</span> {price}</p>)
+            : <p>{description}</p>
+    }
 </li>
