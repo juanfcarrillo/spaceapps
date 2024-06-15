@@ -1,0 +1,24 @@
+---
+import PrizeItem from "../prize/PrizeItem.astro";
+---
+<ul class="w-full flex flex-col gap-4 md:flex-row md:gap-8 justify-evenly items-center mt-8" >
+        
+                <PrizeItem
+                    title="Modalidad"
+                    description="100% virtual - Clases en Vivo por Youtube."
+                    number="💻"
+                />
+                <div
+        class="flex w-5/6 md:w-2/3 md:max-w-60 justify-center md:-translate-y-8 md:order-none order-first"
+    >
+                <PrizeItem
+                    title="Horario"
+                    description="16:30 a 18:00 horas."
+                    number="🕐"
+                /></div>
+                <PrizeItem
+                    title="Costo"
+                    description="100% gratuito - Certificados de participación incluidos."
+                    number="💵"
+                /> 
+    </ul>
