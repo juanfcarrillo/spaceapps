@@ -1,41 +1,132 @@
-<div class="mt-20 flex items-center justify-center w-full gap-1.5 count-down-main">
-    <div class="timer">
+<div
+  class="mt-20 flex items-center justify-center w-full gap-1.5 count-down-main"
+>
+  <div class="timer">
     <div
-    class="rounded-xl border border-indigo-600 py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5">
-    <h3
-      class="countdown-element days font-manrope font-semibold text-2xl text-indigo-600 text-center">
-    </h3> 
-    <p class="text-sm font-inter capitalize font-normal text-indigo-600 text-center w-full">days</p>
+      class="rounded-xl border border-indigo-600 py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+    >
+      <h3
+        class="countdown-element days font-manrope font-semibold text-2xl text-indigo-600 text-center"
+      >
+      </h3>
+      <p
+        class="text-sm font-inter capitalize font-normal text-indigo-600 text-center w-full"
+      >
+        Días
+      </p>
     </div>
-    </div>
-    <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
-    <div class="timer">
+  </div>
+  <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
+  <div class="timer">
     <div
-    class="rounded-xl border border-indigo-600 py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5">
-    <h3
-      class="countdown-element hours font-manrope font-semibold text-2xl text-indigo-600 text-center">
-    </h3>
-    <p class="text-sm font-inter capitalize font-normal text-indigo-600 text-center w-full">Hour</p>
+      class="rounded-xl border border-indigo-600 py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+    >
+      <h3
+        class="countdown-element hours font-manrope font-semibold text-2xl text-indigo-600 text-center"
+      >
+      </h3>
+      <p
+        class="text-sm font-inter capitalize font-normal text-indigo-600 text-center w-full"
+      >
+        Horas
+      </p>
     </div>
-    </div>
-    <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
-    <div class="timer">
+  </div>
+  <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
+  <div class="timer">
     <div
-    class="rounded-xl border border-indigo-600 py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5">
-    <h3
-      class="countdown-element minutes font-manrope font-semibold text-2xl text-indigo-600 text-center">
-    </h3>
-    <p class="text-sm font-inter capitalize font-normal text-indigo-600 text-center w-full">Minutes</p>
+      class="rounded-xl border border-indigo-600 py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+    >
+      <h3
+        class="countdown-element minutes font-manrope font-semibold text-2xl text-indigo-600 text-center"
+      >
+      </h3>
+      <p
+        class="text-sm font-inter capitalize font-normal text-indigo-600 text-center w-full"
+      >
+        Minutos
+      </p>
     </div>
-    </div>
-    <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
-    <div class="timer">
+  </div>
+  <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
+  <div class="timer">
     <div
-    class="rounded-xl border border-indigo-600 py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5">
-    <h3
-      class="countdown-element seconds sec font-manrope font-semibold text-2xl text-indigo-600 text-center">
-    </h3>
-    <p class="text-sm font-inter capitalize font-normal text-indigo-600 text-center w-full">Seconds</p>
+      class="rounded-xl border border-indigo-600 py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+    >
+      <h3
+        class="countdown-element seconds sec font-manrope font-semibold text-2xl text-indigo-600 text-center"
+      >
+      </h3>
+      <p
+        class="text-sm font-inter capitalize font-normal text-indigo-600 text-center w-full"
+      >
+        Segundos
+      </p>
     </div>
-    </div>
-    </div>
+  </div>
+</div>
+
+<script>
+  // countdown.js
+  document.addEventListener("DOMContentLoaded", () => {
+    // count-down timer
+    let dest = new Date("apr 25, 2024 10:00:00").getTime();
+
+    let x = setInterval(function () {
+      let now = new Date().getTime();
+      let diff = now - dest;
+      // Check if the countdown has reached zero or negative
+      if (diff <= 0) {
+        clearInterval(x); // Stop the countdown
+        return; // Exit the function
+      }
+
+      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      if (days < 10) {
+        //@ts-ignore
+        days = `0${days}`;
+      }
+      if (hours < 10) {
+        //@ts-ignore
+        hours = `0${hours}`;
+      }
+      if (minutes < 10) {
+        //@ts-ignore
+        minutes = `0${minutes}`;
+      }
+      if (seconds < 10) {
+        //@ts-ignore
+        seconds = `0${seconds}`;
+      }
+
+      // Get elements by class name
+      let countdownElements =
+        document.getElementsByClassName("countdown-element");
+
+      // Loop through the elements and update their content
+      for (let i = 0; i < countdownElements.length; i++) {
+        let className = countdownElements[i].classList[1]; // Get the second class name
+        switch (className) {
+          case "days":
+            countdownElements[i].innerHTML = days.toString();
+            break;
+          case "hours":
+            countdownElements[i].innerHTML = hours.toString();
+            break;
+          case "minutes":
+            countdownElements[i].innerHTML = minutes.toString();
+            break;
+          case "seconds":
+            countdownElements[i].innerHTML = seconds.toString();
+            break;
+          default:
+            break;
+        }
+      }
+    }, 1000);
+  });
+</script>
