@@ -18,7 +18,7 @@ import CountDown from "../components/countDown/CountDown.astro";
 <Layout title="Condrita Space Apps">
 	<main class="w-full h-full scroll-smooth">
 		<CTAFull 
-			href="#FormSection"
+			href="#FormSection" 
 			title="Condrita Campamento de Verano Espacial"
 			body={`¡La aventura te espera!\nInscríbete al Campamento Espacial más grande del país.`}
 			image={Rocket}
@@ -46,17 +46,16 @@ import CountDown from "../components/countDown/CountDown.astro";
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
-			const scrollButton = document.querySelector('a[href="#school-form"]');
-			if (scrollButton) { 
+			const scrollButton = document.querySelector('a[href="#FormSection"]');
+			if (scrollButton) {
 				scrollButton.addEventListener('click', function(event) {
 					event.preventDefault();
-					const targetSection = document.getElementById('school-form');
-					if (targetSection) { 
+					const targetSection = document.getElementById('FormSection'); 
+					if (targetSection) {
 						targetSection.scrollIntoView({ behavior: 'smooth' });
 					}
 				});
 			}
 		});
 	</script>
-	
 </Layout>
