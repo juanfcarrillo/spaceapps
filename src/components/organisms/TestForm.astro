@@ -1,29 +1,33 @@
 ---
 import Button from "../molecules/Button.astro";
 import Input from "../molecules/Input.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <form id="test-form" class="flex flex-col py-8 md:px-24 md:py-16 items-center min-w-96">
     <Input
-        label="Nombre"
+        label={t('form.name.label')}
         id="name"
         type="text"
-        placeholder="Ingresa tu nombre"
+        placeholder={t('form.name.placeholder')}
     />
 
     <Input
-        label="Email"
+        label={t('form.email.label')}
         id="email"
         type="email"
-        placeholder="Ingresa tu email"
+        placeholder={t('form.email.placeholder')}
     />
 
     <Input
-        label="Telefono"
+        label={t('form.phone.label')}
         id="phone"
         type="tel"
-        placeholder="Ingresa tu telefono"
+        placeholder={t('form.phone.placeholder')}
     />
 
-    <Button label="Inscríbete" type="submit" />
+    <Button label={t('form.submit')} type="submit" />
 </form>

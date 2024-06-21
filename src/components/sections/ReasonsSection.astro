@@ -1,20 +1,24 @@
 ---
 import TextIcon from "../organisms/TextIcon.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="school-form" class="flex flex-col gap-8 py-8 px-8 md:px-24 md:py-16">
-    <h2 class="text-center text-3xl font-bold">Sé parte de la misión</h2>
-    <p class="text-center">Sumérgete en increíbles retos para descubrir el mundo espacial.</p>
+    <h2 class="text-center text-3xl font-bold">{t('textIcon.title')}</h2>
+    <p class="text-center">{t('textIcon.description')}</p>
     <ul class="flex gap-4 flex-col md:flex-row">
         <TextIcon icon="🌎">
-            <p>Tendrás acceso a <strong class="font-bold">más de 10 horas de formación junto a expertos nacionales y mundiales</strong> que te inspirarán a descubrir el espacio.</p>
+            <p set:html={t('textIcon.point1')}></p>
         </TextIcon>
         <TextIcon icon="🚀">
-            <p>A través de nuestros <strong class="font-bold">3 módulos y retos</strong>, aprenderás sobre Fundamentos del Espacio, Juegos y Narrativas, Realidad Virtual y Técnicas de Presentación efectiva.</p>
+            <p set:html={t('textIcon.point2')}></p>
         </TextIcon>
         <TextIcon icon="🐉">
-            <p>Cada clase contará con <strong class="font-bold">certificado de participación avalado por la Universidad San Francisco de Quito.</strong></p>
+            <p set:html={t('textIcon.point3')}></p>
         </TextIcon>
     </ul>
-    <p class="text-center">Creamos una experiencia de aprendizaje única, diseñada para niños y adolescentes donde los participantes accederán a todos los materiales del campamento de por vida. </p>
+    <p class="text-center">{t('textIcon.conclusion')}</p>
 </section>

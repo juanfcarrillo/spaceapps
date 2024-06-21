@@ -1,29 +1,29 @@
 ---
 import PrizeItem from "../prize/PrizeItem.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 <ul class="w-full flex flex-col gap-4 md:flex-row md:gap-8 justify-evenly items-center mt-8" >
-        
-                <PrizeItem
-                    title="Modalidad"
-                    description="100% virtual - Clases en Vivo por Youtube."
-                    number="💻"
-                />
-            
-                <PrizeItem
-                    title="Horario"
-                    description="16:30 a 18:00 horas."
-                    number="🕐"
-                />
-                <PrizeItem
-                    title="Costo"
-                    description="100% gratuito - Certificados de participación incluidos."
-                    number="💵"
-                /> 
-                <PrizeItem
-                    title="Participantes"
-                    prices={["Estudiantes desde los 5 hasta los 18 años de todo el Ecuador.",
-                        "Profesores que quieran transformar la manera en que se enseña ciencia y tecnología"
-                    ]}
-                    number="👥"
-                /> 
-    </ul>
+    <PrizeItem
+        title={t('prize.modality.title')}
+        description={t('prize.modality.description')}
+        number="💻"
+    />
+    <PrizeItem
+        title={t('prize.schedule.title')}
+        description={t('prize.schedule.description')}
+        number="🕐"
+    />
+    <PrizeItem
+        title={t('prize.cost.title')}
+        description={t('prize.cost.description')}
+        number="💵"
+    /> 
+    <PrizeItem
+        title={t('prize.participants.title')}
+        prices={[t('prize.participants.description1'), t('prize.participants.description2')]}
+        number="👥"
+    /> 
+</ul>

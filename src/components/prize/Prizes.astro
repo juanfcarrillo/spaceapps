@@ -1,22 +1,25 @@
 ---
 import PrizeItem from "./PrizeItem.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <ul class="w-full flex flex-col gap-4 md:flex-row md:gap-48 justify-center items-center lg:items-start mt-8">
     <PrizeItem
-    title="Estudiantes"
+    title={t('prize.students.title')}
     prices={[
-        "Becas en la Universidad San Francisco de Quito.",
-        "Computadoras.",
-        "Conviértete en el expositor principal en nuestro evento final de clausura."
+        t('prize.students.prices1'),
+        t('prize.students.prices2'),
+        t('prize.students.prices3')
     ]}
     number="🏆"
-    />
-    <PrizeItem
-        title="Profesores"
-        prices={[
-            "Galardón: Best Teacher in the Universe 2024."
-        ]}
-        number="🏆"
-        />
+/>
+<PrizeItem
+    title={t('prize.teachers.title')}
+    prices={[
+        t('prize.teachers.prices1')
+    ]}
+    number="🏆"
+/>
 </ul>

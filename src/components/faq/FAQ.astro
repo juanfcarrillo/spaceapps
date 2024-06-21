@@ -1,35 +1,41 @@
 ---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const faqs = [
   {
-    question: "¿Condrita - Campamento de Verano Espacial tiene algún costo?",
-    answer: "No, el campamento es 100% gratuito. Inclusive la emisión de certificados de participación."
+    question: t('faq.question1'),
+    answer: t('faq.answer1')
   },
   {
-    question: "¿Qué es el Campamento de Verano Espacial 'Condrita'?",
-    answer: "El Campamento de Verano Espacial 'Condrita' es un programa educativo gratuito que ofrece a niños y adolescentes la oportunidad de aprender sobre el espacio a través de retos, módulos educativos y clases impartidas por expertos."
+    question: t('faq.question2'),
+    answer: t('faq.answer2')
   },
   {
-    question: "¿Quiénes pueden participar en el campamento?",
-    answer: "Pueden participar estudiantes de entre 5 y 18 años de todo el Ecuador que tengan interés en el espacio, así como profesores que quieran transformar la manera en que se enseña ciencia y tecnología."
+    question: t('faq.question3'),
+    answer: t('faq.answer3')
   },
   {
-    question: "¿Cuáles son las fechas y horarios del campamento?",
-    answer: "El campamento se llevará a cabo de forma virtual con clases en vivo por YouTube, de 16:30 a 18:00 horas."
+    question: t('faq.question4'),
+    answer: t('faq.answer4')
   },
   {
-    question: "¿Qué aprenderán los participantes en el campamento?",
-    answer: "Los participantes aprenderán sobre fundamentos del espacio, juegos y narrativas, realidad virtual y técnicas de presentación efectiva. El programa se divide en cuatro semanas con diferentes temas y retos."
+    question: t('faq.question5'),
+    answer: t('faq.answer5')
   },
   {
-    question: "¿Cómo me inscribo en el campamento?",
-    answer: "Puedes inscribirte a través del formulario disponible en la página oficial del campamento."
+    question: t('faq.question6'),
+    answer: t('faq.answer6')
   },
   {
-    question: "¿Qué materiales necesito para participar en el campamento?",
-    answer: "Todos los materiales necesarios para el campamento estarán disponibles para los participantes de por vida. No se requieren materiales adicionales."
+    question: t('faq.question7'),
+    answer: t('faq.answer7')
   }
 ];
 ---
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
       const questions = document.querySelectorAll('.faq-question');
@@ -44,29 +50,29 @@ const faqs = [
         });
       });
     });
-  </script>
-  
-  <style>
-    .faq-question.active::after {
-      content: '▲';
-    }
-    .faq-question::after {
-      content: '▼';
-      font-size: 0.65rem;
-      float: right;
-    }
-  </style>
-  
-  <div class="max-w-3xl mx-auto p-4">
-    <h2 class="text-center text-3xl font-bold mb-10">Preguntas frecuentes</h2>
-    {faqs.map(faq => (
-      <div class="mb-4 bg-white shadow-md rounded-lg">
-        <div class="faq-question cursor-pointer py-4 px-6 text-lg font-semibold flex justify-between items-center">
-          {faq.question}
-        </div>
-        <div class="faq-answer hidden py-4 px-6 border-t border-gray-200">
-          {faq.answer}
-        </div>
+</script>
+
+<style>
+  .faq-question.active::after {
+    content: '▲';
+  }
+  .faq-question::after {
+    content: '▼';
+    font-size: 0.65rem;
+    float: right;
+  }
+</style>
+
+<div class="max-w-3xl mx-auto p-4">
+  <h2 class="text-center text-3xl font-bold mb-10">{t('faq.title')}</h2>
+  {faqs.map(faq => (
+    <div class="mb-4 bg-white shadow-md rounded-lg">
+      <div class="faq-question cursor-pointer py-4 px-6 text-lg font-semibold flex justify-between items-center">
+        {faq.question}
       </div>
-    ))}
-  </div>
+      <div class="faq-answer hidden py-4 px-6 border-t border-gray-200">
+        {faq.answer}
+      </div>
+    </div>
+  ))}
+</div>

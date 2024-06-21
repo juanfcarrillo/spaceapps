@@ -1,38 +1,42 @@
 ---
+// src/components/sections/timeline.astro
 import Timeline from "../timeline/Timeline.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const timelineItems = [
   {
-    title: "Semana 1:",
-    date: "9 y 11 de julio",
-    description: "Aprende sobre fundamentos y cultura del espacio. ¡Conoce todos los secretos del universo! ¿Listo para ser astronauta?",
+    title: t('timeline.week1.title'),
+    date: t('timeline.week1.date'),
+    description: t('timeline.week1.description'),
     isActive: false,
   },
   {
-    title: "Semana 2:",
-    date: "16 y 18 de julio",
-    description: "Elige tu reto: Crea un juego, cuento, cómic o dibujo sobre el espacio o Propón la construcción de un centro de comando espacial en el Ecuador con herramientas innovadoras.",
+    title: t('timeline.week2.title'),
+    date: t('timeline.week2.date'),
+    description: t('timeline.week2.description'),
     isActive: false,
   },
   {
-    title: "Semana 3:",
-    date: "23 y 25 de julio",
-    description: "Aprende cómo hacer presentaciones efectivas y contar tu historia. Descubre cómo presentar tu proyecto y postula por nuestros fabulosos premios.",
+    title: t('timeline.week3.title'),
+    date: t('timeline.week3.date'),
+    description: t('timeline.week3.description'),
     isActive: false,
   },
   {
-    title: "Semana 4:",
-    date: "28 de julio ",
-    description: "Entrega tu reto hasta el 28 de julio por nuestros medios oficiales y entra a participar por nuestros premios.\nSé parte de nuestro Space Fest el 1 de agosto en la Universidad San Francisco de Quito.",
+    title: t('timeline.week4.title'),
+    date: t('timeline.week4.date'),
+    description: t('timeline.week4.description'),
     isActive: false,
   }
 ];
 ---
 
 <section class="flex flex-col gap-8 py-8 md:px-24 md:py-16">
-    <h2 class="text-center text-3xl font-bold">¿Qué y Cómo aprenderás?</h2>
-    <p class="text-center">Accede a educación inmersiva en temas del espacio con la calidad de la Universidad #1 del país.</p>
+    <h2 class="text-center text-3xl font-bold">{t('timeline.title')}</h2>
+    <p class="text-center">{t('timeline.description')}</p>
     <Timeline
         timelineItems={timelineItems}
     />
