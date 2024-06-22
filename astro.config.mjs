@@ -11,6 +11,8 @@ export default defineConfig({
   }),
   integrations: [tailwind()],
   redirects: {
-    '/': '/es/colegio'  
+    '/colegio': '/es/colegio',
+    '/': '/home'
+      
   }
 });
