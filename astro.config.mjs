@@ -12,7 +12,7 @@ export default defineConfig({
   integrations: [tailwind()],
   redirects: {
     '/colegio': '/es/colegio',
-    '/': '/home'
+    '/': '/es/home'
       
   }
 });
