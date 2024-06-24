@@ -1,7 +1,7 @@
 ---
 // src/components/sections/timeline.astro
-import FAQ from '../components/faq/FAQ.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import FAQ from '../../components/faq/FAQ.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
