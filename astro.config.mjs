@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from "@astrojs/cloudflare";
 import storyblok from '@storyblok/astro';
+
 import { loadEnv } from 'vite';
 const env = loadEnv("", process.cwd(), 'STORYBLOK');
 
@@ -19,12 +20,13 @@ export default defineConfig({
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
       components: {
-        blogPost: 'storyblok/BlogPost',
+        test: 'storyblok/Test',
+        page: 'storyblok/Page',
       },
-      // apiOptions: {
-      //   // Choose your Storyblok space region
-      //   region: 'us', // optional,  or 'eu' (default)
-      // },
+      apiOptions: {
+        // Choose your Storyblok space region
+        region: 'us', // optional,  or 'eu' (default)
+      },
     })
   ],
   redirects: {
