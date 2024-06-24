@@ -1,0 +1,43 @@
+---
+// src/components/sections/timeline.astro
+import FAQ from '../components/faq/FAQ.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const faqs = [
+  {
+    question: t('faq.question1'),
+    answer: t('faq.answer1')
+  },
+  {
+    question: t('faq.question2'),
+    answer: t('faq.answer2')
+  },
+  {
+    question: t('faq.question3'),
+    answer: t('faq.answer3')
+  },
+  {
+    question: t('faq.question4'),
+    answer: t('faq.answer4')
+  },
+  {
+    question: t('faq.question5'),
+    answer: t('faq.answer5')
+  },
+  {
+    question: t('faq.question6'),
+    answer: t('faq.answer6')
+  },
+  {
+    question: t('faq.question7'),
+    answer: t('faq.answer7')
+  }
+];
+---
+<section class="flex flex-col gap-8 pt-8 md:px-24 md:pt-16 max-w-4xl mx-auto pb-10">
+    <h2 class="text-center text-3xl font-bold mb-5">{t('faq.title')}</h2>
+    <FAQ faqItems={faqs} />
+</section>
