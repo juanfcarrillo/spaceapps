@@ -1,0 +1,24 @@
+---
+import Timeline, {
+    type TimelineItemProps,
+} from "../components/timeline/Timeline.astro";
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+
+const timelineItems: TimelineItemProps[] = blok.timeline.map((item: any) => ({
+    title: item.title,
+    date: item.date,
+    description: item.description,
+    isActive: item.isActive,
+}));
+---
+
+<section
+    {...storyblokEditable(blok)}
+    class="flex flex-col gap-8 py-8 md:px-24 md:py-16"
+>
+    <h2 class="text-center text-3xl font-bold">{blok.title}</h2>
+    <p class="text-center">{blok.subtitle}</p>
+    <Timeline timelineItems={timelineItems} />
+</section>
