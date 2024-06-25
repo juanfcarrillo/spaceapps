@@ -9,8 +9,6 @@ const { data } = await storyblokApi.get("/cdn/stories/colegio", {
   version: "draft",
 });
 const content = data.story.content;
-console.log(content);
-
 ---
 
 <StoryblokComponent blok={content} />

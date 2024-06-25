@@ -2,15 +2,19 @@
 
 import { useStoryblokApi } from '@storyblok/astro'
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+import Layout from '../layouts/Layout.astro';
 
 const storyblokApi = useStoryblokApi()
 
-const { data } = await storyblokApi.get("/cdn/stories/colegio", {
+const { data } = await storyblokApi.get("/cdn/stories/test-post", {
   version: "draft",
 });
 const content = data.story.content;
-console.log(content);
 
+const datas = Astro.locals.STORYBLOK_TOKEN 
+console.log(datas)
 ---
 
-<StoryblokComponent blok={content} />
+<Layout blank title='Test Post'>
+  <StoryblokComponent blok={content} />
+</Layout>
