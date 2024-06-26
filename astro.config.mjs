@@ -28,6 +28,7 @@ export default defineConfig({
         timelineSection: 'storyblok/TimelineSectionSB',
         textIconSection: 'storyblok/TextIconSectionSB',
         cardSection: 'storyblok/CardSectionSB',
+        divider: 'storyblok/DividerSB',
       },
       apiOptions: {
         // Choose your Storyblok space region
