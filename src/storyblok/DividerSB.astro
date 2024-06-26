@@ -1,5 +1,10 @@
 ---
+import { storyblokEditable } from '@storyblok/astro'
 import Divider from "../components/Divider.astro";
+
+const { blok } = Astro.props
 ---
 
-<Divider />
+<Divider 
+    {...storyblokEditable(blok)}
+/>
