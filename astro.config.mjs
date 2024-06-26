@@ -24,6 +24,7 @@ export default defineConfig({
         page: 'storyblok/Page',
         textIcon: 'storyblok/textIconSB',
         reasonsSection: 'storyblok/ReasonsSectionSB',
+        
         timelineSection: 'storyblok/TimelineSectionSB',
         textIconSection: 'storyblok/TextIconSectionSB',
         cardSection: 'storyblok/CardSectionSB',
