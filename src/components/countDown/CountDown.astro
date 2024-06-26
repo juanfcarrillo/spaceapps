@@ -70,11 +70,11 @@
   // countdown.js
   document.addEventListener("DOMContentLoaded", () => {
     // count-down timer
-    let dest = new Date("apr 25, 2024 10:00:00").getTime();
+    let dest = new Date("jul 11, 2024 10:00:00").getTime();
 
     let x = setInterval(function () {
       let now = new Date().getTime();
-      let diff = now - dest;
+      let diff = dest - now;
       // Check if the countdown has reached zero or negative
       if (diff <= 0) {
         clearInterval(x); // Stop the countdown
