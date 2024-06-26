@@ -1,13 +1,16 @@
 ---
-import { storyblokEditable } from '@storyblok/astro'
+import { renderRichText, storyblokEditable } from '@storyblok/astro'
 import ImageTextSection from "../components/organisms/ImageTextSection.astro";
 
 const { blok } = Astro.props;
+
+const body = renderRichText(blok.body);
+const imgSrc = blok.image[0].filename;
 ---
 
 <ImageTextSection
     title={blok.title}
-    body={blok.body}
-    image={blok.image}
+    body={body}
+    image={imgSrc}
     {...storyblokEditable(blok)}
 />
