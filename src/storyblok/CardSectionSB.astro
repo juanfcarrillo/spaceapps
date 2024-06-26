@@ -1,0 +1,17 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import CardSection from "../components/organisms/CardSection.astro";
+const { blok } = Astro.props;
+---
+
+<CardSection
+    title={blok.title}
+    subtitle={blok.subtitle}
+    items={blok.items.map((item: any) => ({
+        number: item.number,
+        title: item.title,
+        description: item.description,
+        list: item.list,
+    }))}
+    {...storyblokEditable(blok)}
+/>

@@ -16,20 +16,20 @@ import CountDown from "../components/countDown/CountDown.astro";
 import Ejemplo from "../components/ejemplo.astro";
 import { storyblokEditable } from '@storyblok/astro'
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
-const { blok } = Astro.props
+// const { blok } = Astro.props
 
 
 
-import { useStoryblokApi } from '@storyblok/astro'
+// import { useStoryblokApi } from '@storyblok/astro'
 
 
-const storyblokApi = useStoryblokApi()
+// const storyblokApi = useStoryblokApi()
 
-const { data } = await storyblokApi.get("/cdn/stories/colegio", {
-  version: "draft",
-});
-const content = data.story.content;
-console.log(content);
+// const { data } = await storyblokApi.get("/cdn/stories/colegio", {
+//   version: "draft",
+// });
+// const content = data.story.content;
+// console.log(content);
 
 
 
@@ -37,7 +37,7 @@ console.log(content);
 ---
 
 <Layout title="Condrita Space Apps">
-	<main class="w-full h-full scroll-smooth"  {...storyblokEditable(blok)}>
+	<main class="w-full h-full scroll-smooth">
 
 		<CTAFull 
 			href="#school-form"
@@ -45,7 +45,7 @@ console.log(content);
 			body={`¡La aventura te espera!\nInscríbete al Campamento Espacial más grande del país.`}
 			image={Rocket}
 		/>
-		<StoryblokComponent blok={content} />
+		<!-- <StoryblokComponent blok={content} /> -->
 		<Divider />
 		<CountDown />
 		<ReasonsSection />

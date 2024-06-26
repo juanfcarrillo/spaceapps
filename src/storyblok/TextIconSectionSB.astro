@@ -1,0 +1,17 @@
+---
+import { renderRichText, storyblokEditable } from "@storyblok/astro";
+import TextIconSection from "../components/organisms/TextIconSection.astro";
+const { blok } = Astro.props;
+
+const items = blok.items.map((item: any) => ({
+    icon: item.icon,
+    content: renderRichText(item.content),
+}));
+---
+
+<TextIconSection
+    title={blok.title}
+    subtitle={blok.subtitle}
+    items={items}
+    {...storyblokEditable(blok)}
+/>
