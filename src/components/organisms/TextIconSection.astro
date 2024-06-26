@@ -1,5 +1,6 @@
 ---
 import SectionLayout from "../../layouts/SectionLayout.astro";
+import TextIcon from "./TextIcon.astro";
 
 interface Props {
     title: string;
@@ -19,10 +20,9 @@ const { title, subtitle, items } = Astro.props;
     <ul class="flex gap-4 flex-col md:flex-row">
         {
             items.map((item) => (
-                <li class="flex gap-4 items-center">
-                    <span class="text-2xl">{item.icon}</span>
+                <TextIcon icon={item.icon}>
                     <Fragment set:html={item.content} />
-                </li>
+                </TextIcon>
             ))
         }
     </ul>
