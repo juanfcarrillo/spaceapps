@@ -1,0 +1,13 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import ImageTextSection from "../components/organisms/ImageTextSection.astro";
+
+const { blok } = Astro.props;
+---
+
+<ImageTextSection
+    title={blok.title}
+    body={blok.body}
+    image={blok.image}
+    {...storyblokEditable(blok)}
+/>

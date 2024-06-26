@@ -26,6 +26,7 @@ export default defineConfig({
         cardSection: 'storyblok/CardSectionSB',
         divider: 'storyblok/DividerSB',
         countdown: 'storyblok/CountDownSB',
+        imageTextSection: 'storyblok/ImageTextSectionSB',
       },
       apiOptions: {
         // Choose your Storyblok space region
