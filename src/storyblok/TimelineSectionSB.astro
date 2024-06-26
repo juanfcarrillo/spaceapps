@@ -1,8 +1,7 @@
 ---
-import Timeline, {
-    type TimelineItemProps,
-} from "../components/timeline/Timeline.astro";
 import { storyblokEditable } from "@storyblok/astro";
+import type { TimelineItemProps } from "../components/molecules/timeline/Timeline.astro";
+import TimelineSection from "../components/organisms/TimelineSection.astro";
 
 const { blok } = Astro.props;
 
@@ -14,11 +13,9 @@ const timelineItems: TimelineItemProps[] = blok.timeline.map((item: any) => ({
 }));
 ---
 
-<section
+<TimelineSection 
+    title={blok.title}
+    subtitle={blok.subtitle}
+    timelineItems={timelineItems}
     {...storyblokEditable(blok)}
-    class="flex flex-col gap-8 py-8 md:px-24 md:py-16"
->
-    <h2 class="text-center text-3xl font-bold">{blok.title}</h2>
-    <p class="text-center">{blok.subtitle}</p>
-    <Timeline timelineItems={timelineItems} />
-</section>
+/>
