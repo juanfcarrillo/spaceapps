@@ -20,11 +20,8 @@ export default defineConfig({
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
       components: {
-        test: 'storyblok/Test',
         page: 'storyblok/Page',
         textIcon: 'storyblok/textIconSB',
-        reasonsSection: 'storyblok/ReasonsSectionSB',
-        
         timelineSection: 'storyblok/TimelineSectionSB',
         textIconSection: 'storyblok/TextIconSectionSB',
         cardSection: 'storyblok/CardSectionSB',
