@@ -21,11 +21,11 @@ export default defineConfig({
       accessToken: env.STORYBLOK_TOKEN,
       components: {
         page: 'storyblok/Page',
-        textIcon: 'storyblok/textIconSB',
         timelineSection: 'storyblok/TimelineSectionSB',
         textIconSection: 'storyblok/TextIconSectionSB',
         cardSection: 'storyblok/CardSectionSB',
         divider: 'storyblok/DividerSB',
+        countdown: 'storyblok/CountDownSB',
       },
       apiOptions: {
         // Choose your Storyblok space region

@@ -1,0 +1,12 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import CountDown from '../components/countDown/CountDown.astro';
+const { blok } = Astro.props
+
+const countdownDate = blok.date;
+---
+
+<CountDown
+    countdownDate={countdownDate}
+    {...storyblokEditable(blok)} 
+/>
