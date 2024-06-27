@@ -1,5 +1,10 @@
-import { defineConfig } from 'astro/config';
 import cloudflare from "@astrojs/cloudflare";
+import storyblok from '@storyblok/astro';
+import { defineConfig } from 'astro/config';
+
+import { loadEnv } from 'vite';
+const env = loadEnv("", process.cwd(), 'STORYBLOK');
+
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
@@ -9,7 +14,27 @@ export default defineConfig({
       enabled: true
     }
   }),
-  integrations: [tailwind()],
+  integrations: [
+    tailwind(),
+    storyblok({
+      accessToken: env.STORYBLOK_TOKEN,
+      components: {
+        page: 'storyblok/Page',
+        timelineSection: 'storyblok/TimelineSectionSB',
+        textIconSection: 'storyblok/TextIconSectionSB',
+        cardSection: 'storyblok/CardSectionSB',
+        divider: 'storyblok/DividerSB',
+        countdown: 'storyblok/CountDownSB',
+        imageTextSection: 'storyblok/ImageTextSectionSB',
+        ctaFull: 'storyblok/CTAFullSB',
+        faqSection: 'storyblok/FAQsectionSB',
+      },
+      apiOptions: {
+        // Choose your Storyblok space region
+        region: 'us', // optional,  or 'eu' (default)
+      },
+    })
+  ],
   redirects: {
     '/': '/es/colegio'  
   }

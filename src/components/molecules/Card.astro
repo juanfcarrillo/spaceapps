@@ -1,0 +1,23 @@
+---
+export interface CardProps {
+    title: string;
+    description?: string;
+    number: string;
+    list?: string[];
+    featured?: boolean;
+}
+
+interface Props extends CardProps {}
+
+const { title, description, number, featured, list } = Astro.props;
+---
+
+<li class=`flex flex-col gap-4 ${featured ? 'w-full' : 'w-5/6'} md:w-full md:max-w-60 shadow-xl px-6 py-8 rounded-lg`>
+    <span class="text-center text-ns-gray-dark text-6xl">{number}</span>
+    <h5 class="text-center text-xl font-bold">{title}</h5>
+    {
+        list
+            ? list.map((item) => <p class="text-sm"><span class="text-2xl">•</span> {item}</p>)
+            : <p>{description}</p>
+    }
+</li>

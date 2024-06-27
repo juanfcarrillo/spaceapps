@@ -1,0 +1,28 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import CTAFull from '../components/sections/CTAFull.astro';
+
+const { blok } = Astro.props
+
+const background: {
+    from: string;
+    to: string;
+} | string | undefined = blok.background[0].from
+    ? {
+        from: blok.background[0].from,
+        to: blok.background[0].to,
+    }
+    : blok.background[0].color;
+---
+
+<CTAFull 
+    {...storyblokEditable(blok)}
+    image={{src: blok.image[0]?.filename} as any}
+    title={blok.title}
+    body={blok.body}
+    button={blok.button}
+    href={blok.href}
+    fullHeight={blok.fullHeight}
+    background={background}
+    backgroundImage={blok.backgroundImage[0]?.filename}
+/>

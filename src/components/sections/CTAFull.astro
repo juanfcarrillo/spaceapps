@@ -5,15 +5,42 @@ interface Props {
     body?: string;
     button?: string;
     href?: string;
+    fullHeight?: boolean;
+    background?:
+        | {
+              from: string;
+              to: string;
+          }
+        | string;
+    backgroundImage?: string;
 }
 
 import type { ImageMetadata } from "astro";
 
-const { image } = Astro.props;
+const { image, fullHeight, background, backgroundImage } = Astro.props;
+
+const backgroundColor =
+    typeof background === "string"
+        ? {
+              from: background,
+              to: background,
+          }
+        : background;
+
+const { from = "", to = "" } = backgroundColor || {};
 ---
 
 <section
-    class="flex h-[100vh] gap-8 lg:gap-16 items-center justify-center text-ns-white py-8 px-8 lg:px-16 bg-gradient-to-t from-ns-primary to-ns-primary-darker flex-wrap-reverse lg:flex-nowrap lg:text-start text-center"
+    class:list={[
+        "flex gap-8 lg:gap-16 items-center justify-center py-8 px-8 lg:px-16 bg-gradient-to-t flex-wrap-reverse lg:flex-nowrap lg:text-start text-center",
+        {
+            "h-[100vh]": fullHeight,
+            "bg-gradient gradient-from gradient-to": background,
+            "bg-image": backgroundImage,
+            "text-ns-white": !background,
+        },
+    ]}
+    style={`${backgroundImage ? `background-image: url(${backgroundImage})` : ""}`}
 >
     <div
         class="flex flex-1 max-w-xl flex-col gap-6 lg:w-1/2 items-center lg:items-start"
@@ -27,7 +54,11 @@ const { image } = Astro.props;
                     "Space Apps es un proyecto de código abierto para crear aplicaciones de espacios en la nube."
             }
         </p>
-        <a class="bg-ns-base w-fit px-8 py-4" target="_blank" href={Astro.props.href ?? "#"}>
+        <a
+            class="bg-ns-base w-fit px-8 py-4 text-ns-white"
+            target="_blank"
+            href={Astro.props.href ?? "#"}
+        >
             {Astro.props.button ?? "Inscríbete"}
         </a>
     </div>
@@ -37,3 +68,18 @@ const { image } = Astro.props;
         <img src={image.src} alt="Rocket" />
     </figure>
 </section>
+
+<style define:vars={{ from, to }}>
+    .bg-gradient {
+        background-image: linear-gradient(to top, var(--tw-gradient-stops));
+    }
+
+    .gradient-from {
+        --tw-gradient-from: var(--from) var(--tw-gradient-from-position);
+        --tw-gradient-to: var(--to) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--from), var(--to);
+    }
+    .gradient-to {
+        --tw-gradient-to: var(--to) var(--tw-gradient-to-position);
+    }
+</style>

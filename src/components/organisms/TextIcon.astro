@@ -6,7 +6,7 @@ export interface Props {
 const { icon } = Astro.props;
 ---
 
-<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center gap-4 flex-1 max-w-80">
     <span class="text-6xl font-bold">{icon}</span>
     <p class="text-sm">
         <slot />

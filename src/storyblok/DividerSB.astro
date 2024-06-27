@@ -1,0 +1,10 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import Divider from "../components/atoms/Divider.astro";
+
+const { blok } = Astro.props
+---
+
+<Divider 
+    {...storyblokEditable(blok)}
+/>

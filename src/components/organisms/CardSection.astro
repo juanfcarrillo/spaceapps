@@ -1,0 +1,49 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+import type { CardProps } from '../molecules/Card.astro';
+import Card from '../molecules/Card.astro';
+
+interface linkButton{
+    link:string;
+    textContent:string;
+}
+
+interface Props {
+    title: string;
+    subtitle: string;
+    items: CardProps[];
+    extra?: string;
+    linkButton: linkButton[];
+}
+
+const { title, subtitle, extra , items, linkButton} = Astro.props;
+---
+
+<SectionLayout>
+    <h3 class="text-center text-3xl font-bold">{title}</h3>
+    <p class="text-center">{subtitle}</p>
+    <ul class="w-full flex flex-col gap-4 md:flex-row md:gap-8 justify-evenly items-center mt-8">
+        {
+            items.map((item) => (
+                <Card {...item} />
+            ))
+        }
+    </ul>
+    {
+        extra && <p class="text-center">{extra}</p>
+    }
+    { 
+        linkButton &&
+        <ul class="flex items-center justify-center h-full">
+            {linkButton.map((item) =>
+              (
+                <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-1/6 mr-1">
+                <a href={item.link}>
+                    {item.textContent}
+                </a>
+                </button>
+              ))
+            }
+        </ul>
+    }
+</SectionLayout>

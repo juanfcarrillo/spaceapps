@@ -1,11 +1,11 @@
 ---
-import NavBar from "../components/NavBar.astro";
+import NavBar from "../components/organisms/NavBar.astro";
 
 interface Props {
 	title: string;
+	blank?: boolean;
 }
-
-const { title } = Astro.props;
+const { title, blank } = Astro.props;
 ---
 
 <!doctype html>
@@ -33,8 +33,8 @@ const { title } = Astro.props;
 
 	<title>Space Apps</title>
 
-	<body class="font-saDaysns flex h-full flex-col">
-		<NavBar transparent />
+	<body class="font-sans flex h-full flex-col">
+		{!blank && <NavBar transparent />}
 		<slot />
 	</body>
 </html>

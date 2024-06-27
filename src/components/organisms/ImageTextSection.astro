@@ -1,0 +1,19 @@
+---
+import SectionLayout from "../../layouts/SectionLayout.astro";
+
+interface Props {
+    title: string;
+    body: string;
+    image: string;
+}
+
+const { title, body, image } = Astro.props;
+---
+
+<SectionLayout>
+    <h3 class="text-center text-3xl font-bold">{title}</h3>
+    <div class="flex gap-4 flex-col md:flex-row w-2/3 mx-auto">
+        <img src={image} alt="Condrita roca" class="h-48 object-contain mr-3" />
+        <Fragment set:html={body} />
+    </div>
+</SectionLayout>
