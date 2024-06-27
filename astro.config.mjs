@@ -27,6 +27,7 @@ export default defineConfig({
         divider: 'storyblok/DividerSB',
         countdown: 'storyblok/CountDownSB',
         imageTextSection: 'storyblok/ImageTextSectionSB',
+        ctaFull: 'storyblok/CTAFullSB',
       },
       apiOptions: {
         // Choose your Storyblok space region
