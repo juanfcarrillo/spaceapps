@@ -1,3 +1,11 @@
+---
+interface Props {
+  countdownDate: string;
+}
+
+const { countdownDate } = Astro.props;
+---
+
 <div
   class="mt-20 flex items-center justify-center w-full gap-1.5 count-down-main"
 >
@@ -66,15 +74,15 @@
   </div>
 </div>
 
-<script>
+<script define:vars={{ countdownDate }}>
   // countdown.js
   document.addEventListener("DOMContentLoaded", () => {
     // count-down timer
-    let dest = new Date("apr 25, 2024 10:00:00").getTime();
+    let dest = new Date(countdownDate).getTime();
 
     let x = setInterval(function () {
       let now = new Date().getTime();
-      let diff = now - dest;
+      let diff = dest - now;
       // Check if the countdown has reached zero or negative
       if (diff <= 0) {
         clearInterval(x); // Stop the countdown

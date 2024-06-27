@@ -1,0 +1,29 @@
+---
+import SectionLayout from "../../layouts/SectionLayout.astro";
+import TextIcon from "./TextIcon.astro";
+
+interface Props {
+    title: string;
+    subtitle: string;
+    items: {
+        icon: string;
+        content: string;
+    }[];
+}
+
+const { title, subtitle, items } = Astro.props;
+---
+
+<SectionLayout>
+    <h3 class="text-center text-3xl font-bold">{title}</h3>
+    <p class="text-center">{subtitle}</p>
+    <ul class="flex gap-4 flex-col md:flex-row">
+        {
+            items.map((item) => (
+                <TextIcon icon={item.icon}>
+                    <Fragment set:html={item.content} />
+                </TextIcon>
+            ))
+        }
+    </ul>
+</SectionLayout>
