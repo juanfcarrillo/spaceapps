@@ -28,6 +28,7 @@ export default defineConfig({
         countdown: 'storyblok/CountDownSB',
         imageTextSection: 'storyblok/ImageTextSectionSB',
         ctaFull: 'storyblok/CTAFullSB',
+        faqSection: 'storyblok/FAQsectionSB',
       },
       apiOptions: {
         // Choose your Storyblok space region

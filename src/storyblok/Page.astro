@@ -1,10 +1,14 @@
 ---
 import { storyblokEditable } from '@storyblok/astro'
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import NavBar from '../components/organisms/NavBar.astro';
+import CTAFull from '../components/sections/CTAFull.astro';
 const { blok } = Astro.props
+
 ---
 
 <main {...storyblokEditable(blok)}>
+  <NavBar transparent />
   {
     blok.body?.map((blok: any) => {
       return <StoryblokComponent blok={blok} />

@@ -9,11 +9,18 @@ const items = blok.items.map((item: any) => ({
     description: item.description,
     list: item.list.map((listItem: any) => (listItem.item)),
 }));
+
+const linkButton = blok.button ? blok.button.map((item: any) => ({
+    link: item.link.url,
+    textContent: item.textContent
+})) : null;
 ---
 
 <CardSection
     title={blok.title}
     subtitle={blok.subtitle}
     items={items}
+    extra={blok.extra}
+    linkButton={linkButton}
     {...storyblokEditable(blok)}
 />

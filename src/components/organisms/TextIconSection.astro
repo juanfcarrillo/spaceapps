@@ -9,15 +9,16 @@ interface Props {
         icon: string;
         content: string;
     }[];
+    endtext?: string;
 }
 
-const { title, subtitle, items } = Astro.props;
+const { title, subtitle, items, endtext } = Astro.props;
 ---
 
 <SectionLayout>
     <h3 class="text-center text-3xl font-bold">{title}</h3>
     <p class="text-center">{subtitle}</p>
-    <ul class="flex gap-4 flex-col md:flex-row">
+    <ul class="flex gap-4 flex-col md:flex-row justify-center items-center">
         {
             items.map((item) => (
                 <TextIcon icon={item.icon}>
@@ -26,4 +27,7 @@ const { title, subtitle, items } = Astro.props;
             ))
         }
     </ul>
+    {endtext && (
+        <p class="text-center">{endtext}</p>
+    )}
 </SectionLayout>
