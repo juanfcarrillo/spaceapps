@@ -1,4 +1,10 @@
 ---
+// src/components/sections/NavBar.astro
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 interface Props {
     transparent?: boolean;
 }
@@ -8,10 +14,10 @@ const { transparent } = Astro.props;
 
 <nav
     id="navbar"
-    class=`fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between ${transparent ? 'bg-transparent' : 'bg-ns-primary-darker' } text-ns-white px-32 py-6 border-solid border-y-0 border-transparent`
+    class={`fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between ${transparent ? 'bg-transparent' : 'bg-ns-primary-darker'} text-ns-white px-32 py-6 border-solid border-y-0 border-transparent`}
 >
     <figure class="hidden md:flex items-center w-36">
-        <a href="/">
+        <a href={`/${lang}/`}>
             <img
                 src="https://assets.spaceappschallenge.org/media/images/SpaceAppsLogo_Default_2ColorWhi.width-440.jpegquality-60.png"
                 alt="Space Apps"
@@ -19,18 +25,65 @@ const { transparent } = Astro.props;
         </a>
     </figure>
     <ul class="flex items-center justify-center gap-6">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/colegio">Colegio</a></li>
+        <li><a href={`/${lang}/`}>{t('nav.home')}</a></li>
+        <li><a href={`/${lang}/colegio`}>{t('nav.about')}</a></li>
+        <li class="relative">
+            <select id="languageSelect" class="hover:underline focus:outline-none bg-transparent text-ns-white appearance-none pr-8" onchange="changeLanguage(this.value)">
+                <option value="es" selected={lang === 'es'}>Español</option>
+                <option value="en" selected={lang === 'en'}>English</option>
+                <option value="kw" selected={lang === 'kw'}>Kichwa</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-ns-white font-bold">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.59 7.41L10 11.83l4.41-4.42L16 9l-6 6-6-6z"/></svg>
+            </div>
+        </li>        
     </ul>
 </nav>
 
-<script>
-    const navbar = document.getElementById("navbar");
-
-    const isTransparent = navbar?.classList.contains("bg-transparent");
-
-    isTransparent &&document.addEventListener("scroll", () => {
-        navbar?.classList.toggle("bg-ns-primary-darker", window.scrollY > 36);
-        navbar?.classList.toggle("bg-transparent", window.scrollY < 36);
+<script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+        const select = document.getElementById('languageSelect');
+        select.addEventListener('change', function() {
+            const lang = this.value;
+            window.location.href = `/${lang}/colegio`;
+        });
     });
+
+    const navbar = document.getElementById("navbar");
+    if (navbar) {
+        const isTransparent = navbar.classList.contains("bg-transparent");
+
+        if (isTransparent) {
+            document.addEventListener("scroll", () => {
+                if (navbar) {
+                    navbar.classList.toggle("bg-ns-primary-darker", window.scrollY > 36);
+                    navbar.classList.toggle("bg-transparent", window.scrollY < 36);
+                }
+            });
+        }
+    }
 </script>
+<style>
+    #languageSelect {
+      background-color: transparent;
+      border: none;
+      color: inherit;
+      font: inherit;
+      padding: 0.5rem 1rem;
+      padding-right: 2rem; 
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    
+    #languageSelect option {
+      background-color: #000; 
+      color: #fff; 
+    }
+    
+    #languageSelect::-ms-expand {
+      display: none; 
+    }
+  </style>
+  

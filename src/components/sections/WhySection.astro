@@ -1,9 +1,12 @@
 ---
 import WhyItems from "../why/whyItems.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils"; 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="flex flex-col gap-8 px-2 py-8 md:px-24 md:py-16">
-    <h3 class="text-center text-3xl font-bold">¿Por qué deberías participar? </h3>
+    <h3 class="text-center text-3xl font-bold">{t('why.participate.title')}</h3>
     <WhyItems />
-    <p class="text-center">¡Súmate al despegue de la industria espacial en el país a través de la educación de nuestros niños y adolescentes!🚀</p>
+    <p class="text-center">{t('why.participate.message')}</p>
 </section>

@@ -7,7 +7,6 @@ const env = loadEnv("", process.cwd(), 'STORYBLOK');
 
 import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: cloudflare({
@@ -37,6 +36,6 @@ export default defineConfig({
     })
   ],
   redirects: {
-    '/': '/colegio'
+    '/': '/es/colegio'  
   }
 });
