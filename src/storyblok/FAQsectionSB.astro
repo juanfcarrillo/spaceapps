@@ -1,0 +1,15 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import FAQsection from '../components/sections/FAQsection.astro';
+
+const { blok } = Astro.props;
+
+const faqs = blok.faqSection.map((item: any) => ({
+    answer: item.answer,
+    question: item.question
+}));
+---
+<FAQsection 
+  {...storyblokEditable(blok)}
+  faqs={faqs}
+/>
