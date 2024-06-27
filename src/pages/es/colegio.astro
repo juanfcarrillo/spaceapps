@@ -1,0 +1,66 @@
+---
+// src/pages/colegio.astro
+import Rocket from "../../assets/3DRocket.png";
+import Divider from "../../components/Divider.astro";
+import FAQ from "../../components/faq/FAQ.astro";
+import CTAFull from "../../components/sections/CTAFull.astro";
+import PrizesSections from "../../components/sections/PrizesSections.astro";
+import ReasonsSection from "../../components/sections/ReasonsSection.astro";
+import SchoolFormSection from "../../components/sections/SchoolFormSection.astro";
+import SponsorsSection from "../../components/sections/SponsorsSection.astro";
+import TimelineSections from "../../components/sections/TimelineSections.astro";
+import WhySection from "../../components/sections/WhySection.astro";
+import Layout from "../../layouts/Layout.astro";
+import NeedKnowSection from "../../components/sections/NeedKnowSection.astro";
+import CondritaSection from "../../components/sections/CondritaSection.astro";
+import CountDown from "../../components/countDown/CountDown.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t('header.title')}>
+	<main class="w-full h-full scroll-smooth">
+		<CTAFull 
+			href="#FormSection" 
+			title={t('cta.title')}
+			body={t('cta.body')}
+			image={Rocket}
+		/>
+		<Divider />
+		<CountDown />
+		<ReasonsSection />
+		<Divider />
+		<CondritaSection />
+		<Divider />
+		<TimelineSections />
+		<Divider />
+		<PrizesSections />
+		<Divider />
+		<WhySection />
+		<Divider />
+		<NeedKnowSection />
+		<Divider />
+		<SponsorsSection />
+		<Divider />
+		<SchoolFormSection />
+		<Divider/>
+		<FAQ />
+	</main>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const scrollButton = document.querySelector('a[href="#FormSection"]');
+			if (scrollButton) {
+				scrollButton.addEventListener('click', function(event) {
+					event.preventDefault();
+					const targetSection = document.getElementById('FormSection'); 
+					if (targetSection) {
+						targetSection.scrollIntoView({ behavior: 'smooth' });
+					}
+				});
+			}
+		});
+	</script>
+</Layout>

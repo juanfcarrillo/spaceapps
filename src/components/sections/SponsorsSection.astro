@@ -6,11 +6,15 @@ import miloSpaceScienceInstituteLogo from "../../assets/miloSpaceScienceInstitut
 import ministerioRelacionesExterioresLogo from "../../assets/MinisterioRelacionesExterioresLogo.png";
 import ministeriosLogo from "../../assets/Ministerios.png";
 import genSpaceLogo from "../../assets/genSpaceLogo.png";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="sponsors-section py-10">
     <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-12">Ellos difunden nuestro mensaje en todo el espacio</h2> <!-- Agrega mb-12 para más espacio debajo del h2 -->
+        <h2 class="text-3xl font-bold mb-12">{t('sponsors.title')}</h2> 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
             <div class="flex justify-center items-center">
                 <a href="https://miloinstitute.org/" target="_blank">

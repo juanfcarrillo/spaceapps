@@ -1,9 +1,12 @@
 ---
 import SchoolForm from "../organisms/SchoolForm.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="school-form" class="flex flex-col gap-8 py-8 md:px-24 md:py-16">
-    <h2 class="text-center text-3xl font-bold">Sé parte de la misión. Inscríbete ahora</h2>
-    <p class="text-center">Participa de manera 100% gratuita durante todo el Condrita Campamento de Verano Espacial.</p>
-    <SchoolForm />
+    <h2 class="text-center text-3xl font-bold">{t('schoolForm.title')}</h2>
+    <p class="text-center">{t('schoolForm.description')}</p>
+     <SchoolForm />
 </section>
