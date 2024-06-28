@@ -37,7 +37,7 @@ const { from = "", to = "" } = backgroundColor || {};
             "h-[100vh]": fullHeight,
             "bg-gradient gradient-from gradient-to": background,
             "bg-image": backgroundImage,
-            "text-ns-white": !background,
+            "text-ns-white": background,
         },
     ]}
     style={`${backgroundImage ? `background-image: url(${backgroundImage})` : ""}`}
