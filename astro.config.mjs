@@ -3,7 +3,7 @@ import storyblok from '@storyblok/astro';
 import { defineConfig } from 'astro/config';
 
 import { loadEnv } from 'vite';
-const env = loadEnv("", process.cwd(), 'STORYBLOK');
+const env = loadEnv("", process.cwd(), 'PUBLIC');
 
 import tailwind from "@astrojs/tailwind";
 
@@ -17,7 +17,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     storyblok({
-      accessToken: env.STORYBLOK_TOKEN,
+      accessToken: import.meta.env.PUBLIC_STORYBLOK_TOKEN || env.PUBLIC_STORYBLOK_TOKEN,
       components: {
         page: 'storyblok/Page',
         timelineSection: 'storyblok/TimelineSectionSB',
