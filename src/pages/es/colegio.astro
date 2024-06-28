@@ -1,7 +1,6 @@
 ---
 // src/pages/colegio.astro
 import Rocket from "../../assets/3DRocket.png";
-import Divider from "../../components/Divider.astro";
 import FAQ from "../../components/faq/FAQ.astro";
 import CTAFull from "../../components/sections/CTAFull.astro";
 import PrizesSections from "../../components/sections/PrizesSections.astro";
@@ -13,8 +12,9 @@ import WhySection from "../../components/sections/WhySection.astro";
 import Layout from "../../layouts/Layout.astro";
 import NeedKnowSection from "../../components/sections/NeedKnowSection.astro";
 import CondritaSection from "../../components/sections/CondritaSection.astro";
-import CountDown from "../../components/countDown/CountDown.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import Divider from "../../components/atoms/Divider.astro";
+import CountDown from "../../components/organisms/CountDown.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -29,7 +29,9 @@ const t = useTranslations(lang);
 			image={Rocket}
 		/>
 		<Divider />
-		<CountDown />
+		<CountDown
+			countdownDate="2024-07-11T00:00:00.000Z"
+		/>
 		<ReasonsSection />
 		<Divider />
 		<CondritaSection />
