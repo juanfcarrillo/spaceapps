@@ -1,31 +1,22 @@
 ---
 import PrizeItem from "../prize/PrizeItem.astro";
-
-interface PrizeItemProps {
-    title: string;
-    description?: string;
-    number: string;
-    prices?: string[];
-    isFirst?: boolean;
-}
+import type { WhyItemProps } from "../sections/WhySection.astro";
 
 interface Props {
-    items: PrizeItemProps[];
+    items: WhyItemProps[];
 }
 
 const { items } = Astro.props;
 ---
 
 <div class="flex justify-center">
-    <ul class="w-full flex flex-col md:flex-row gap-2 md:gap-4 justify-evenly items-center mt-8 max-w-screen-lg px-4 md:px-8">
+    <ul class="w-full flex flex-row gap-2 justify-evenly items-center mt-8 max-w-screen-lg px-4">
         {items.map((item, index) => (
-            <li key={index} class={`flex flex-col items-center ${item.isFirst ? "w-full md:w-2/3 md:max-w-96 md:-translate-y-8 order-first md:order-none" : "w-full md:w-1/3 mx-1"}`}> <!-- Ajustamos el ancho de los elementos -->
+            <li key={index} class={`flex flex-col items-center`}> <!-- Ajustamos el ancho de los elementos -->
                 <PrizeItem 
                     title={item.title} 
                     description={item.description} 
                     number={item.number} 
-                    isFirst={item.isFirst} 
-                    prices={item.prices}
                 />
             </li>
         ))}

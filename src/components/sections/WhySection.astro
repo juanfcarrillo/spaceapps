@@ -1,18 +1,16 @@
 ---
 import WhyItems from "../why/whyItems.astro";
 
-interface PrizeItemProps {
+export interface WhyItemProps {
     title: string;
     description: string;
     number: string;
-    prices?: string[];
-    isFirst?: boolean;
 }
 
 interface Props {
     title: string;
     message: string;
-    items: PrizeItemProps[];
+    items: WhyItemProps[];
 }
 
 const { title, message, items } = Astro.props;

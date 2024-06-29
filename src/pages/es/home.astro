@@ -6,7 +6,6 @@ import Layout from "../../layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import Competition from "../../components/sections/Competition.astro";
 import Cards from "../../components/sections/Cards.astro";
-import CountDown from "../../components/organisms/CountDown.astro";
 
 
 const lang = getLangFromUrl(Astro.url);
@@ -30,7 +29,7 @@ const t = useTranslations(lang);
    		message={t('why.section2Home.description')}
 		items={[
 	    { title: t('why.section2Home.title1'), description: t('why.section2Home.description1'), number: "🚀" },
-        { title: t('why.section2Home.title2'), description: t('why.section2Home.description2'), number: "🎓", isFirst: true },
+        { title: t('why.section2Home.title2'), description: t('why.section2Home.description2'), number: "🎓"},
         { title: t('why.section2Home.title3'), description: t('why.section2Home.description3'), number: "🚀" },
 		]}/>	
 	<Cards />
