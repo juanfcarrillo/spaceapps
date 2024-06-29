@@ -1,13 +1,11 @@
 ---
 import Rocket from "../../assets/3DRocket3F.png";
-import CTAFull from "../../components/sections/CTAFull.astro";
-import WhySection from "../../components/sections/WhySection.astro";
-import Layout from "../../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import Competition from "../../components/sections/Competition.astro";
-import Cards from "../../components/sections/Cards.astro";
-import CountDown from "../../components/organisms/CountDown.astro";
-
+import CTAFull from "./../components/sections/CTAFull.astro";
+import WhySection from "./../components/sections/WhySection.astro";
+import Layout from "./../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from './../i18n/utils';
+import Competition from "./../components/sections/Competition.astro";
+import Cards from "./../components/sections/Cards.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

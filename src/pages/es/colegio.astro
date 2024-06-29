@@ -12,10 +12,10 @@ import WhySection from "../../components/sections/WhySection.astro";
 import Layout from "../../layouts/Layout.astro";
 import NeedKnowSection from "../../components/sections/NeedKnowSection.astro";
 import CondritaSection from "../../components/sections/CondritaSection.astro";
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
 import Divider from "../../components/atoms/Divider.astro";
 import CountDown from "../../components/organisms/CountDown.astro";
-
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -26,8 +26,8 @@ const t = useTranslations(lang);
 			fullHeight
 			background={{from: "#105bd8", to: "#0b3d91"}}
 			href="#FormSection"
-			title="Condrita Campamento de Verano Espacial "
-			body={`¡La aventura te espera!\nInscríbete al Campamento Espacial más grande del país.`}
+			title={t('cta.title')}
+			body={t('cta.body')}
 			image={Rocket}
 		/>
 		<CountDown
