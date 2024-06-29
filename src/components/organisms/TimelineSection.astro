@@ -1,18 +1,20 @@
 ---
-import SectionLayout from "../../layouts/SectionLayout.astro";
-import Timeline, { type TimelineItemProps } from "../molecules/timeline/Timeline.astro";
+import SectionLayout from "../../layouts/SectionLayout.astro"
+import Timeline, {
+    type TimelineItemProps,
+} from "../molecules/timeline/Timeline.astro"
 
 interface Props {
-    title: string;
-    subtitle: string;
-    timelineItems: TimelineItemProps[];
+    title: string
+    subtitle: string
+    timelineItems: TimelineItemProps[]
 }
 
-const { title, subtitle, timelineItems } = Astro.props;
+const { title, subtitle, timelineItems } = Astro.props
 ---
 
 <SectionLayout>
-    <h2 class="text-center text-3xl font-bold">{title}</h2>
-    <p class="text-center">{subtitle}</p>
+    <h2 class='text-center text-3xl font-bold'>{title}</h2>
+    <p class='text-center'>{subtitle}</p>
     <Timeline timelineItems={timelineItems} />
 </SectionLayout>

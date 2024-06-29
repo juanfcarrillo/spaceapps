@@ -1,22 +1,42 @@
 ---
-const { title, date, description, isActive, isOdd } = Astro.props;
+const { title, date, description, isActive, isOdd, isUnique } = Astro.props
 ---
 
-<div class={`relative flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between md:justify-normal ${isOdd ? 'md:flex-row-reverse' : ''} group ${isActive ? 'is-active' : ''}`}>
-    <div class={`flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 ${isActive ? 'group-[.is-active]:bg-ns-primary text-ns-gray-light group-[.is-active]:text-white' : 'text-ns-gray-dark'} shadow shrink-0 md:order-1 ${isOdd ? 'lg:-translate-x-1/2' : 'lg:translate-x-1/2'}`}>
-        {isActive ? (
-             <span class="text-xl text-gray-100">🪨</span>
-            
-        ) : (
-            <span class="text-xl text-gray-100">🪨</span>
-
-        )}
-    </div>
-    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow">
-        <div class="flex items-center justify-between space-x-2 mb-1">
-            <div class="font-bold text-slate-900">{title}</div>
-            <time class="font-caveat font-medium text-ns-primary-darker">{date}</time>
+{ isUnique ? (
+        <div class='relative flex flex-col items-center justify-center group'>
+            <div class='w-full md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'>
+                <div class='flex items-center justify-between space-x-2 mb-1'>
+                    <div class='font-bold text-slate-900'>{title}</div>
+                    <time class='font-caveat font-medium text-ns-primary-darker'>
+                        {date}
+                    </time>
+                </div>
+                <div class='text-slate-500'>{description}</div>
+            </div>
         </div>
-        <div class="text-slate-500">{description}</div>
-    </div>
-</div>
+    ) : (
+        <div
+            class={`relative flex flex-col md:flex-row gap-4 md:gap-0 items-center justify-between md:justify-normal ${isOdd ? "md:flex-row-reverse" : ""} group ${isActive ? "is-active" : ""}`}
+        >
+            <div
+                class={`flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 ${isActive ? "group-[.is-active]:bg-ns-primary text-ns-gray-light group-[.is-active]:text-white" : "text-ns-gray-dark"} shadow shrink-0 md:order-1 ${isOdd ? "lg:-translate-x-1/2" : "lg:translate-x-1/2"}`}
+            >
+                {isActive ? (
+                    <span class='text-xl text-gray-100'>🪨</span>
+                ) : (
+                    <span class='text-xl text-gray-100'>🪨</span>
+                )}
+            </div>
+
+            <div class='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow'>
+                <div class='flex items-center justify-between space-x-2 mb-1'>
+                    <div class='font-bold text-slate-900'>{title}</div>
+                    <time class='font-caveat font-medium text-ns-primary-darker'>
+                        {date}
+                    </time>
+                </div>
+                <div class='text-slate-500'>{description}</div>
+            </div>
+        </div>
+    )
+}
