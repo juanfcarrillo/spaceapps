@@ -144,7 +144,17 @@ export const ui = {
     'why.teachers.title': 'Profesores',
     'why.teachers.description': 'Ayúdanos a cambiar la forma en que los niños y adolescentes aprenden sobre el espacio.',
 
-    // Why.astro
+    //WhyItems Home .astro
+    'why.section2Home.title': 'Despeguemos juntos el futuro de la industria espacial en el Ecuador',
+    'why.section2Home.description': 'Descubre <strong class="font-bold">oportunidades de mercado</strong>, accede a <strong class="font-bold">formación de vanguardia</strong> y únete a la nueva ola de <strong class="font-bold">emprendedores disruptivos</strong> en la industria espacial del Ecuador.',
+    'why.section2Home.title1': 'Oportunidades de mercado',
+    'why.section2Home.description1': '<ul><li>Más allá de los despegues espaciales - <strong class="font-bold">Oportunidades de mercado</strong> de más de 500BN: Esta nueva industria necesita <strong class="font-bold">alimentos, turismo, logística, tecnología</strong> y más. ¿Listo para descubrir estas oportunidades?</li></ul>',
+    'why.section2Home.title2': 'Formación y Retos',
+    'why.section2Home.description2': '<ul><li>Prepárate para el futuro con <strong class="font-bold">Bootcamps, Campamentos de Verano, Retos</strong> y <strong class="font-bold">Hackathón</strong>. Accede a formación con líderes nacionales e internacionales, y participa activamente en nuestros retos de innovación.</li></ul>',
+    'why.section2Home.title3': 'Emprendedores Disruptivos',
+    'why.section2Home.description3': '<ul><li>Únete a la tripulación de <strong class="font-bold">emprendedores disruptivos</strong>. Aportamos todo el apoyo para crear las primeras <strong class="font-bold">startups space industry</strong> del Ecuador. ¿Listo para abordar?</li></ul>',
+
+// Why.astro
 
     'why.participate.title': '¿Por qué deberías participar?',
     'why.participate.message': '¡Súmate al despegue de la industria espacial en el país a través de la educación de nuestros niños y adolescentes!🚀',

@@ -13,7 +13,7 @@ const { transparent } = Astro.props;
 
 <nav
     id="navbar"
-    class={`fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between ${transparent ? 'bg-transparent' : 'bg-ns-primary-darker'} text-ns-white px-32 py-6 border-solid border-y-0 border-transparent`}
+    class={`fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between bg-ns-primary-darker text-ns-white px-32 py-6 border-solid border-y-0 border-transparent`}
 >
     <figure class="hidden md:flex items-center w-36">
         <a href={`/${lang}/`}>
@@ -24,7 +24,7 @@ const { transparent } = Astro.props;
         </a>
     </figure>
     <ul class="flex items-center justify-center gap-6">
-        <li><a href={`/${lang}/`}>{t('nav.home')}</a></li>
+        <li><a href={`/${lang}/home`}>{t('nav.home')}</a></li>
         <li><a href={`/${lang}/colegio`}>{t('nav.about')}</a></li>
         <li class="relative">
             <select id="languageSelect" class="hover:underline focus:outline-none bg-transparent text-ns-white appearance-none pr-8" onchange="changeLanguage(this.value)">
@@ -50,18 +50,19 @@ const { transparent } = Astro.props;
 
     const navbar = document.getElementById("navbar");
     if (navbar) {
-        const isTransparent = navbar.classList.contains("bg-transparent");
+        const isTransparent = navbar.classList.contains("bg-ns-primary");
 
         if (isTransparent) {
             document.addEventListener("scroll", () => {
                 if (navbar) {
-                    navbar.classList.toggle("bg-ns-primary-darker", window.scrollY > 36);
+                    navbar.classList.toggle("bg-ns-primary", window.scrollY > 36);
                     navbar.classList.toggle("bg-transparent", window.scrollY < 36);
                 }
             });
         }
     }
 </script>
+
 <style>
     #languageSelect {
       background-color: transparent;
@@ -84,5 +85,4 @@ const { transparent } = Astro.props;
     #languageSelect::-ms-expand {
       display: none; 
     }
-  </style>
-  
+</style>

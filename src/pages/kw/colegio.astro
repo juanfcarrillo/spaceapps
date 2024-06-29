@@ -1,6 +1,6 @@
 ---
-// src/pages/colegio.astro
-import Rocket from "../../assets/3DRocket.png";
+
+import Rocket from "../../assets/3DRocket3F.png";
 import FAQ from "../../components/faq/FAQ.astro";
 import CTAFull from "../../components/sections/CTAFull.astro";
 import PrizesSections from "../../components/sections/PrizesSections.astro";
@@ -25,8 +25,8 @@ const t = useTranslations(lang);
 		<CTAFull 
 			fullHeight
 			background={{from: "#105bd8", to: "#0b3d91"}}
-			href="#school-form"
-			title="Contrita Campamento de Verano Espacial "
+			href="#FormSection"
+			title="Condrita Campamento de Verano Espacial "
 			body={`¡La aventura te espera!\nInscríbete al Campamento Espacial más grande del país.`}
 			image={Rocket}
 		/>
@@ -41,7 +41,15 @@ const t = useTranslations(lang);
 		<Divider />
 		<PrizesSections />
 		<Divider />
-		<WhySection />
+		<WhySection 
+		title={t('why.participate.title')}
+		message={t('why.participate.message')}
+		items={[
+			{ title: t('why.parents.title'), description: t('why.parents.description'), number: "👨" },
+			{ title: t('why.students.title'), description: t('why.students.description'), number: "🙋‍♂️", isFirst: true },
+			{ title: t('why.teachers.title'), description: t('why.teachers.description'), number: "🧑‍🏫" },
+		]}
+	/>
 		<Divider />
 		<NeedKnowSection />
 		<Divider />

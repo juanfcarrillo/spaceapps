@@ -1,15 +1,15 @@
 ---
-import TextIcon from "../organisms/TextIcon.astro";
+import TextIcon from "../../components/organisms/TextIcon.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section id="school-form" class="flex flex-col gap-8 py-8 px-8 md:px-24 md:py-16">
+<section  class="flex flex-col gap-8 py-8 px-8 md:px-24 md:py-16">
     <h2 class="text-center text-3xl font-bold">{t('textIcon.title')}</h2>
     <p class="text-center">{t('textIcon.description')}</p>
-    <ul class="flex gap-4 flex-col md:flex-row">
+    <ul class="flex gap-4 flex-col md:flex-row justify-center mx-auto">
         <TextIcon icon="🌎">
             <p set:html={t('textIcon.point1')}></p>
         </TextIcon>

@@ -1,31 +1,33 @@
 ---
 import PrizeItem from "../prize/PrizeItem.astro";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+
+interface PrizeItemProps {
+    title: string;
+    description?: string;
+    number: string;
+    prices?: string[];
+    isFirst?: boolean;
+}
+
+interface Props {
+    items: PrizeItemProps[];
+}
+
+const { items } = Astro.props;
 ---
 
-<ul
-    class="w-full flex flex-col gap-4 md:flex-row md:gap-8 justify-evenly items-center mt-8"
->
-    <PrizeItem
-        title={t('why.parents.title')}
-        description={t('why.parents.description')}
-        number="👨"
-    />
-    <div
-        class="flex w-5/6 md:w-2/3 md:max-w-60 justify-center md:-translate-y-8 md:order-none order-first"
-    >
-        <PrizeItem
-            title={t('why.students.title')}
-            description={t('why.students.description')}
-            number="🙋‍♂️"
-            isFirst
-        />
-    </div>
-    <PrizeItem
-        title={t('why.teachers.title')}
-        description={t('why.teachers.description')}
-        number="🧑‍🏫"
-    />
-</ul>
+<div class="flex justify-center">
+    <ul class="w-full flex flex-col md:flex-row gap-2 md:gap-4 justify-evenly items-center mt-8 max-w-screen-lg px-4 md:px-8">
+        {items.map((item, index) => (
+            <li key={index} class={`flex flex-col items-center ${item.isFirst ? "w-full md:w-2/3 md:max-w-96 md:-translate-y-8 order-first md:order-none" : "w-full md:w-1/3 mx-1"}`}> <!-- Ajustamos el ancho de los elementos -->
+                <PrizeItem 
+                    title={item.title} 
+                    description={item.description} 
+                    number={item.number} 
+                    isFirst={item.isFirst} 
+                    prices={item.prices}
+                />
+            </li>
+        ))}
+    </ul>
+</div>
