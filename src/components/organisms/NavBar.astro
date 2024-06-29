@@ -27,11 +27,11 @@ const { transparent } = Astro.props;
         <li><a href={`/${lang}/home`}>{t('nav.home')}</a></li>
         <li><a href={`/${lang}/colegio`}>{t('nav.about')}</a></li>
         <li class="relative">
-            <select id="languageSelect" class="hover:underline focus:outline-none bg-transparent text-ns-white appearance-none pr-8" onchange="changeLanguage(this.value)">
+            <select id="languageSelect" class="hover:underline focus:outline-none bg-transparent text-ns-white appearance-none pr-8">
                 <option value="es" selected={lang === 'es'}>Español</option>
                 <option value="en" selected={lang === 'en'}>English</option>
                 <option value="kw" selected={lang === 'kw'}>Kichwa</option>
-            </select>
+            </select>            
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-ns-white font-bold">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.59 7.41L10 11.83l4.41-4.42L16 9l-6 6-6-6z"/></svg>
             </div>
@@ -42,13 +42,19 @@ const { transparent } = Astro.props;
 <script type="module">
     document.addEventListener('DOMContentLoaded', () => {
         const select = document.getElementById('languageSelect');
-        select.addEventListener('change', function() {
-            const lang = this.value;
+
+        function changeLanguage(lang) {
             const currentPath = window.location.pathname;
             const pathParts = currentPath.split('/');
-            const page = pathParts[pathParts.length - 1] || 'home'; 
+            const page = pathParts[2] ? pathParts.slice(2).join('/') : 'home'; 
             window.location.href = `/${lang}/${page}`;
-        });
+        }
+
+        if (select) {
+            select.addEventListener('change', function() {
+                changeLanguage(this.value);
+            });
+        }
     });
 
     const navbar = document.getElementById("navbar");
@@ -65,6 +71,7 @@ const { transparent } = Astro.props;
         }
     }
 </script>
+
 
 
 <style>
