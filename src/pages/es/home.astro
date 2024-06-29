@@ -8,6 +8,8 @@ import Competition from "../../components/sections/Competition.astro"
 import Cards from "../../components/sections/Cards.astro"
 import TimelineSection from "../../components/organisms/TimelineSection.astro"
 import Divider from "../../components/atoms/Divider.astro"
+import SponsorsSection from "../../components/sections/SponsorsSection.astro"
+import FormSection from "../../components/sections/FormSection.astro"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -79,7 +81,7 @@ const t = useTranslations(lang)
             timelineItems={[
                 {
                     title: "Final Competition - Condrita Campamento de Verano Espacial para niños y adolescentes",
-                    date: "1",
+                    date: "1 de agosto",
                     description:
                         "🚀 Descubre el espacio en familia y conoce a los ganadores de los retos del Condrita Campamento de Verano Espacial.",
                     isActive: true,
@@ -93,7 +95,7 @@ const t = useTranslations(lang)
                 },
                 {
                     title: "Inicio de inscripciones NASA Space Apps Challenge Quito 2024",
-                    date: "14",
+                    date: "14 de agosto",
                     description:
                         "🚀 Inscríbete al Hackathón de ciencia y tecnología más grande del mundo. Todos son bienvenidos, tenemos un reto para todos.",
                     isActive: true,
@@ -102,7 +104,7 @@ const t = useTranslations(lang)
         />
         <TimelineSection
             title={"Septiembre"}
-            subtitle={"Eventos de Septiembre"}
+            subtitle={""}
             timelineItems={[
                 {
                     title: "Space Bootcamp x Entrepreneurs",
@@ -116,7 +118,7 @@ const t = useTranslations(lang)
 
         <TimelineSection
             title={"Octubre"}
-            subtitle={"Eventos de Octubre"}
+            subtitle={""}
             timelineItems={[
                 {
                     title: "Lanzamiento NASA Space Apps Challenge Quito 2024",
@@ -141,12 +143,21 @@ const t = useTranslations(lang)
                 },
             ]}
         />
+        <Divider />
 
         <Cards />
 
-        <!-- 7 Mission -->
+        <Divider />
 
+        <!-- 7 Mission -->
+        <FormSection
+            title='Sé parte de la misión. Entérate de todos los eventos'
+            description='Participa de manera 100% gratuita durante todo el Space Fest. Inscríbete ahora'
+            formSrc='https://usfq55033.activehosted.com/f/embed.php?id=3'
+        />
         <!-- 8 Stakeholders -->
+        <!-- <SponsorsSection /> -->
+        <SponsorsSection />
 
         <!-- 9 Difunden-->
     </main>

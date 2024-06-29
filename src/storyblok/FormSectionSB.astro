@@ -1,0 +1,13 @@
+---
+import { renderRichText, storyblokEditable } from '@storyblok/astro'
+import FormSection from '../components/sections/FormSection.astro';
+
+const { blok } = Astro.props;
+
+---
+<FormSection
+    title={blok.title}
+    description={blok.description}
+    formSrc={blok.formSrc}
+    {...storyblokEditable(blok)}
+/>
