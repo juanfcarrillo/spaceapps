@@ -1,0 +1,90 @@
+<div class="container-rain">
+  <div class="rain rain1"></div>
+  <div class="rain rain2"></div>
+  <div class="rain rain3"></div>
+  <div class="rain rain4"></div>
+  <div class="rain rain5"></div>
+  <div class="rain rain6"></div>
+  <div class="rain rain7"></div>
+  <div class="rain rain8"></div> 
+  <div class="rain rain9"></div>
+  <div class="rain rain10"></div> 
+</div>
+
+<style>
+  .container-rain{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+  }
+  .rain{
+   position: absolute;
+   width: 1rem;
+   height: 10rem;
+   background: #ffffff;
+   border-radius: 20%;
+   opacity: 0.2;
+   rotate: 45deg;
+   overflow: hidden;
+ }
+ .rain1{
+   left: 5rem;
+   top: 2rem;
+   animation: raining 2s linear infinite both;
+ }
+ .rain2{
+  left: 15rem;
+  top: 10rem;
+  animation: raining 3s linear infinite both;
+ }
+ .rain3{
+  right: 36rem;
+  top: 16rem;
+  animation: raining 5s linear infinite both;
+ }
+ .rain4{
+  right: 9rem;
+  top: 12rem;
+  animation: raining 4s linear infinite both;
+ }
+ .rain5{
+  left: 72rem;
+  top: 9rem;
+  animation: raining 3s linear infinite both -3s;  
+ }
+ .rain6{
+  right: 52rem;
+  top: 9rem;
+  animation: raining 4s linear infinite both;
+ }
+ .rain7{
+  left: 56rem;
+  top: 10rem;
+  animation: raining 3s linear infinite both;
+ }
+ .rain8{
+  right: 25rem;
+  top: 40rem;
+  animation: raining 3s linear infinite both;
+ }
+.rain9{
+  right: 5rem;
+  top: 15.5rem;
+  animation: raining 3s linear infinite both;
+}
+.rain10{
+  left: 24rem;
+  top: -4%;
+  animation: raining 2s linear infinite both -3s;
+}
+@keyframes raining {
+  from{
+    transform: translateY(-100vh);
+  }
+  to{
+    transform: translateY(100vh);
+  }
+}
+</style>
