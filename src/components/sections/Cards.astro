@@ -1,42 +1,43 @@
 ---
-import Foto from "../../assets/ComunidadEcuador.png";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
+
 <div class="flex-col min-h-[100vh] bg-ns-white text-ns-base">
   <main class="flex-1 flex items-center justify-center flex-col">
     <div class="w-full max-w-4xl text-center p-6">
       <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-ns-base p-10">
-        Premios 🏆
+        {t('awards.title')}
       </h1>
-      <p class="text-ns-gray-dark md:text-xl mb-6">
-        Cada una de las actividades cuenta con <span class="font-bold">premios únicos</span>, según su público. Conoce más en cada una de sus páginas y verifica los <span class="font-bold">términos, condiciones</span> y <span class="font-bold">lineamientos de elegibilidad</span>.
-      </p>
+      <p class="text-ns-gray-dark md:text-xl mb-6" set:html={t('awards.description')}></p>
     </div>
     <section class="w-full max-w-6xl p-6 bg-ns-white rounded-lg shadow-lg">
       <div class="container px-4 md:px-6">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div class="bg-ns-white rounded-lg shadow p-6">
-            <h3 class="text-lg font-bold text-ns-base">🏅 Galardones</h3>
-            <p class="text-ns-gray-light p-6">Premios y <span class="font-bold">reconocimientos</span> a los mejores participantes.</p>
+            <h3 class="text-lg font-bold text-ns-base">{t('awards.category1.title')}</h3>
+            <p class="text-ns-gray-light p-6" set:html={t('awards.category1.description')}></p>
           </div>
           <div class="bg-ns-white rounded-lg shadow p-6">
-            <h3 class="text-lg font-bold text-ns-base">🚀 Aceleración</h3>
-            <p class="text-ns-gray-light p-6"><span class="font-bold">Programas de aceleración</span> para impulsar tus proyectos.</p>
+            <h3 class="text-lg font-bold text-ns-base">{t('awards.category2.title')}</h3>
+            <p class="text-ns-gray-light p-6" set:html={t('awards.category2.description')}></p>
           </div>
           <div class="bg-ns-white rounded-lg shadow p-6">
-            <h3 class="text-lg font-bold text-ns-base">✈️ Viajes de inmersión</h3>
-            <p class="text-ns-gray-light p-6"><span class="font-bold">Experiencias únicas</span> con la industria espacial.</p>
+            <h3 class="text-lg font-bold text-ns-base">{t('awards.category3.title')}</h3>
+            <p class="text-ns-gray-light p-6" set:html={t('awards.category3.description')}></p>
           </div>
           <div class="bg-ns-white rounded-lg shadow p-6">
-            <h3 class="text-lg font-bold text-ns-base">🤝 Acompañamiento emprendedor</h3>
-            <p class="text-ns-gray-light p-6"><span class="font-bold">Soporte y mentoría</span> para emprendedores.</p>
+            <h3 class="text-lg font-bold text-ns-base">{t('awards.category4.title')}</h3>
+            <p class="text-ns-gray-light p-6" set:html={t('awards.category4.description')}></p>
           </div>
           <div class="bg-ns-white rounded-lg shadow p-6">
-            <h3 class="text-lg font-bold text-ns-base">🎓 Mentorías</h3>
-            <p class="text-ns-gray-light p-6">Sesiones de <span class="font-bold">mentoría</span> con expertos de la industria.</p>
+            <h3 class="text-lg font-bold text-ns-base">{t('awards.category5.title')}</h3>
+            <p class="text-ns-gray-light p-6" set:html={t('awards.category5.description')}></p>
           </div>
           <div class="bg-ns-white rounded-lg shadow p-6">
-            <h3 class="text-lg font-bold text-ns-base">🎓 Becas de estudio</h3>
-            <p class="text-ns-gray-light p-6"><span class="font-bold">Oportunidades de becas</span> para continuar tu educación.</p>
+            <h3 class="text-lg font-bold text-ns-base">{t('awards.category6.title')}</h3>
+            <p class="text-ns-gray-light p-6" set:html={t('awards.category6.description')}></p>
           </div>
         </div>
       </div>

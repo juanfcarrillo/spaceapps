@@ -121,7 +121,55 @@ export const ui = {
       'countdown.hours': 'Hours',
       'countdown.minutes': 'Minutes',
       'countdown.seconds': 'Seconds',
-   
+
+  //========================================================HOME PAGE ============================================================
+
+    //CTA Home
+
+    'ctaHome.title': 'Space Fest 2024 is here!',
+    'ctaHome.body': `Be part of the first Space Fest in Ecuador. We are creating a community that drives the development of the space industry in Ecuador.\n\nAre you up for the challenge?`,
+
+    //WhyItems Home .astro
+    'why.section2Home.title': 'Let\'s launch together the future of the space industry in Ecuador',
+    'why.section2Home.description': 'Discover <strong class="font-bold">market opportunities</strong>, access <strong class="font-bold">cutting-edge training</strong>, and join the new wave of <strong class="font-bold">disruptive entrepreneurs</strong> in Ecuador\'s space industry.',
+    'why.section2Home.title1': 'Market Opportunities',
+    'why.section2Home.description1': '<ul><li>Beyond space launches - <strong class="font-bold">Market opportunities</strong> of over 500BN: This new industry needs <strong class="font-bold">food, tourism, logistics, technology</strong>, and more. Ready to discover these opportunities?</li></ul>',
+    'why.section2Home.title2': 'Training and Challenges',
+    'why.section2Home.description2': '<ul><li>Prepare for the future with <strong class="font-bold">Bootcamps, Summer Camps, Challenges</strong>, and <strong class="font-bold">Hackathons</strong>. Access training with national and international leaders, and actively participate in our innovation challenges.</li></ul>',
+    'why.section2Home.title3': 'Disruptive Entrepreneurs',
+    'why.section2Home.description3': '<ul><li>Join the crew of <strong class="font-bold">disruptive entrepreneurs</strong>. We provide all the support to create Ecuador\'s first <strong class="font-bold">space industry startups</strong>. Ready to board?</li></ul>',
+
+    //Competencias Home .astro
+
+    'comp.title': 'Ecuador Space Competition',
+    'comp.description': 'Be part of the emerging space community of Ecuador and compete for prizes that help you kickstart your journey in this industry.',
+    'comp.access.title': 'Access to World-Class Training',
+    'comp.access.description': 'Learn from the best in the industry in each activity.',
+    'comp.connect.title': 'Connect with Leaders',
+    'comp.connect.description': 'Meet national and global leaders related to space.',
+    'comp.aval.title': 'Endorsement of the #1 University',
+    'comp.aval.description': 'Participate in activities endorsed by the best university in the country.',
+    'comp.solutions.title': 'High-Impact Solutions',
+    'comp.solutions.description': 'Create solutions aligned with real market needs.',
+    'comp.prizes.title': 'Prizes to Launch',
+    'comp.prizes.description': 'Compete for prizes that help you start in this industry.',
+    
+    'awards.title': 'Awards 🏆',
+    'awards.description': 'Each activity features <span class="font-bold">unique awards</span>, tailored to its audience. Learn more on each page and check the <span class="font-bold">terms, conditions</span>, and <span class="font-bold">eligibility guidelines</span>.',
+    'awards.category1.title': '🏅 Honors',
+    'awards.category1.description': 'Awards and <span class="font-bold">recognitions</span> for the best participants.',
+    'awards.category2.title': '🚀 Acceleration',
+    'awards.category2.description': '<span class="font-bold">Acceleration programs</span> to boost your projects.',
+    'awards.category3.title': '✈️ Immersion Trips',
+    'awards.category3.description': '<span class="font-bold">Unique experiences</span> with the space industry.',
+    'awards.category4.title': '🤝 Entrepreneur Support',
+    'awards.category4.description': '<span class="font-bold">Support and mentoring</span> for entrepreneurs.',
+    'awards.category5.title': '🎓 Mentorships',
+    'awards.category5.description': 'Mentorship sessions with industry experts.',
+    'awards.category6.title': '🎓 Scholarships',
+    'awards.category6.description': '<span class="font-bold">Scholarship opportunities</span> to further your education.',
+
+
   },
   es: {
 
@@ -144,17 +192,7 @@ export const ui = {
     'why.teachers.title': 'Profesores',
     'why.teachers.description': 'Ayúdanos a cambiar la forma en que los niños y adolescentes aprenden sobre el espacio.',
 
-    //WhyItems Home .astro
-    'why.section2Home.title': 'Despeguemos juntos el futuro de la industria espacial en el Ecuador',
-    'why.section2Home.description': 'Descubre <strong class="font-bold">oportunidades de mercado</strong>, accede a <strong class="font-bold">formación de vanguardia</strong> y únete a la nueva ola de <strong class="font-bold">emprendedores disruptivos</strong> en la industria espacial del Ecuador.',
-    'why.section2Home.title1': 'Oportunidades de mercado',
-    'why.section2Home.description1': '<ul><li>Más allá de los despegues espaciales - <strong class="font-bold">Oportunidades de mercado</strong> de más de 500BN: Esta nueva industria necesita <strong class="font-bold">alimentos, turismo, logística, tecnología</strong> y más. ¿Listo para descubrir estas oportunidades?</li></ul>',
-    'why.section2Home.title2': 'Formación y Retos',
-    'why.section2Home.description2': '<ul><li>Prepárate para el futuro con <strong class="font-bold">Bootcamps, Campamentos de Verano, Retos</strong> y <strong class="font-bold">Hackathón</strong>. Accede a formación con líderes nacionales e internacionales, y participa activamente en nuestros retos de innovación.</li></ul>',
-    'why.section2Home.title3': 'Emprendedores Disruptivos',
-    'why.section2Home.description3': '<ul><li>Únete a la tripulación de <strong class="font-bold">emprendedores disruptivos</strong>. Aportamos todo el apoyo para crear las primeras <strong class="font-bold">startups space industry</strong> del Ecuador. ¿Listo para abordar?</li></ul>',
-
-// Why.astro
+    // Why.astro
 
     'why.participate.title': '¿Por qué deberías participar?',
     'why.participate.message': '¡Súmate al despegue de la industria espacial en el país a través de la educación de nuestros niños y adolescentes!🚀',
@@ -254,6 +292,56 @@ export const ui = {
     'countdown.hours': 'Horas',
     'countdown.minutes': 'Minutos',
     'countdown.seconds': 'Segundos',
+
+    //========================================================HOME PAGE ============================================================
+
+    //CTA Home 
+
+    'ctaHome.title': '¡Space Fest 2024 ya está aquí!',
+    'ctaHome.body': `Sé parte del primer Space Fest del Ecuador. Creamos la Comunidad que impulsa el desarrollo de la industria espacial en el Ecuador.\n\n¿Te apuntas al reto?`,
+
+     //WhyItems Home .astro
+     'why.section2Home.title': 'Despeguemos juntos el futuro de la industria espacial en el Ecuador',
+     'why.section2Home.description': 'Descubre <strong class="font-bold">oportunidades de mercado</strong>, accede a <strong class="font-bold">formación de vanguardia</strong> y únete a la nueva ola de <strong class="font-bold">emprendedores disruptivos</strong> en la industria espacial del Ecuador.',
+     'why.section2Home.title1': 'Oportunidades de mercado',
+     'why.section2Home.description1': '<ul><li>Más allá de los despegues espaciales - <strong class="font-bold">Oportunidades de mercado</strong> de más de 500BN: Esta nueva industria necesita <strong class="font-bold">alimentos, turismo, logística, tecnología</strong> y más. ¿Listo para descubrir estas oportunidades?</li></ul>',
+     'why.section2Home.title2': 'Formación y Retos',
+     'why.section2Home.description2': '<ul><li>Prepárate para el futuro con <strong class="font-bold">Bootcamps, Campamentos de Verano, Retos</strong> y <strong class="font-bold">Hackathón</strong>. Accede a formación con líderes nacionales e internacionales, y participa activamente en nuestros retos de innovación.</li></ul>',
+     'why.section2Home.title3': 'Emprendedores Disruptivos',
+     'why.section2Home.description3': '<ul><li>Únete a la tripulación de <strong class="font-bold">emprendedores disruptivos</strong>. Aportamos todo el apoyo para crear las primeras <strong class="font-bold">startups space industry</strong> del Ecuador. ¿Listo para abordar?</li></ul>',
+ 
+     //Competencias Home .astro
+
+     'comp.title': 'Competencia Espacial Ecuador',
+    'comp.description': 'Sé parte de la naciente comunidad espacial del Ecuador y participa por premios que te ayuden a despegar tu inicio en esta industria.',
+    'comp.access.title': 'Acceso a formación de talla mundial',
+    'comp.access.description': 'Aprende de los mejores de la industria en cada actividad.',
+    'comp.connect.title': 'Conecta con líderes',
+    'comp.connect.description': 'Conoce a líderes nacionales y mundiales relacionados con el espacio.',
+    'comp.aval.title': 'Aval de la Universidad #1',
+    'comp.aval.description': 'Participa en actividades con el aval de la mejor universidad del país.',
+    'comp.solutions.title': 'Soluciones de alto impacto',
+    'comp.solutions.description': 'Crea soluciones alineadas con necesidades reales del mercado.',
+    'comp.prizes.title': 'Premios para despegar',
+    'comp.prizes.description': 'Participa por premios que te ayuden a iniciar en esta industria.',
+
+    //Seccion de Premios 
+
+    'awards.title': 'Premios 🏆',
+    'awards.description': 'Cada una de las actividades cuenta con <span class="font-bold">premios únicos</span>, según su público. Conoce más en cada una de sus páginas y verifica los <span class="font-bold">términos, condiciones</span> y <span class="font-bold">lineamientos de elegibilidad</span>.',
+    'awards.category1.title': '🏅 Galardones',
+    'awards.category1.description': 'Premios y <span class="font-bold">reconocimientos</span> a los mejores participantes.',
+    'awards.category2.title': '🚀 Aceleración',
+    'awards.category2.description': '<span class="font-bold">Programas de aceleración</span> para impulsar tus proyectos.',
+    'awards.category3.title': '✈️ Viajes de inmersión',
+    'awards.category3.description': '<span class="font-bold">Experiencias únicas</span> con la industria espacial.',
+    'awards.category4.title': '🤝 Acompañamiento emprendedor',
+    'awards.category4.description': '<span class="font-bold">Soporte y mentoría</span> para emprendedores.',
+    'awards.category5.title': '🎓 Mentorías',
+    'awards.category5.description': 'Sesiones de <span class="font-bold">mentoría</span> con expertos de la industria.',
+    'awards.category6.title': '🎓 Becas de estudio',
+    'awards.category6.description': '<span class="font-bold">Oportunidades de becas</span> para continuar tu educación.',
+
 
   },
 
@@ -376,6 +464,59 @@ export const ui = {
     'countdown.hours': 'Pachakuna',
     'countdown.minutes': 'Minutukuna',
     'countdown.seconds': 'Sekundukuna',
+
+      //========================================================HOME PAGE ============================================================
+
+      //CTAhome 
+      
+      'ctaHome.title': '¡Space Fest 2024 chaymi kaypi!',
+      'ctaHome.body': `Ecuadorpi ñawpa Space Fest shuklla rurayta yapashun. Ñukanchik runapak hatun comunidadta kawsanchik, chayllatak kawsankapak llakta washa.\n\n¿Shuk ruralpika kanki?`,
+  
+      //WhyItems Home .astro
+
+      'why.section2Home.title': 'Ñukanchik shukllami chaykuna kuichurinkapak washipura Ecuadorpi',
+      'why.section2Home.description': 'Kashunchik <strong class="font-bold">markata uyashka</strong>, chaykuna ruray <strong class="font-bold">yachachina pushakuna</strong> yachachina ruraykunapash. Kachunkapak shuk <strong class="font-bold">ñukanchik yachachina markakuna</strong> Ecuadorpi.',
+      'why.section2Home.title1': 'Markata Uyashka',
+      'why.section2Home.description1': '<ul><li>Shuk markata ñawpa ruray <strong class="font-bold">uyashka</strong> 500BN kapak: Chaykuna ruralatak <strong class="font-bold">mikuna, turi, rutuna, kamachik</strong>, ñukanchikpak mas. Kachun rurashpa chay uyashka?</li></ul>',
+      'why.section2Home.title2': 'Yachachina y Uyay',
+      'why.section2Home.description2': '<ul><li>Kachun ñawpa rurashpa chaykuna <strong class="font-bold">Bootcampkunapak, Inti Wata Campamentokuna, Uyachina</strong> y <strong class="font-bold">Hackathón</strong>. Ñukanchik rurana pushakuna shina shukllatak, kachun rurashpa ñukanchik uyachina.</li></ul>',
+      'why.section2Home.title3': 'Ñukanchik Yachachina Markakuna',
+      'why.section2Home.description3': '<ul><li>Kachun <strong class="font-bold">ñukanchik yachachina markakuna</strong>. Ñukanchik rurana ruray, kachun Ecuadorpi <strong class="font-bold">shuk industry startups</strong>. Kachun takrishpa?</li></ul>',
+    
+
+      //Competencias Home .astro
+
+      'comp.title': 'Ñukanchikpa Pakarishka Marka',
+      'comp.description': 'Ñukanchikpa ñawpak pakarishka markakuna rikuchin llaktanchikpi yachachina ruraykunata uyashka.',
+      'comp.access.title': 'Tukuy Yachachina',
+      'comp.access.description': 'Ñawpak yachachikuna rikusha ruraykunapi.',
+      'comp.connect.title': 'Ñawpak Hatun Yachachikuna',
+      'comp.connect.description': 'Ñawpak hatun yachachikuna rikuchin ñukanchik ruraykunapi.',
+      'comp.aval.title': 'Universidad #1pa Ushay',
+      'comp.aval.description': 'Ñukanchik ruraykunapi rikuchin universidad ushayiwan.',
+      'comp.solutions.title': 'Rikuchikuna Kushilla',
+      'comp.solutions.description': 'Ñukanchik ruraykunapi kushilla rikuchina.',
+      'comp.prizes.title': 'Rimay Yachachikuna',
+      'comp.prizes.description': 'Ñukanchik ruraykunapi rikuchina kushilla.',
+
+      //Premios 
+
+      'awards.title': 'Rimay 🏆',
+      'awards.description': 'Ñukanchik ruraykunapi rikuchina <span class="font-bold">rimaykunata</span> tukuy markakunapash. Rikuchina markakuna, <span class="font-bold">ushay, kamachikuna</span>, y <span class="font-bold">taripaykunapak</span>.',
+      'awards.category1.title': '🏅 Yachachina',
+      'awards.category1.description': 'Rimaykunata <span class="font-bold">uyashka</span> llaktanchik ruraykunapash.',
+      'awards.category2.title': '🚀 Pushakuna',
+      'awards.category2.description': '<span class="font-bold">Pushakuna ruraykunapak</span> pakarishka ruray.',
+      'awards.category3.title': '✈️ Inti Wata Yachachikuna',
+      'awards.category3.description': '<span class="font-bold">Yachachina rikuchikuna</span> markakunapash.',
+      'awards.category4.title': '🤝 Ñawpak Yachachina',
+      'awards.category4.description': '<span class="font-bold">Yachachina ruray</span> tukuy ñukanchik ruraykunapash.',
+      'awards.category5.title': '🎓 Yachachikuna',
+      'awards.category5.description': 'Yachachina ruraykunapak.',
+      'awards.category6.title': '🎓 Yachachikuna Pushakuna',
+      'awards.category6.description': '<span class="font-bold">Yachachikuna pushakuna</span> tukuy markakunapak.',
+  
+   
 
 }
 

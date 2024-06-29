@@ -16,7 +16,7 @@ const { transparent } = Astro.props;
     class={`fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between bg-ns-primary-darker text-ns-white px-32 py-6 border-solid border-y-0 border-transparent`}
 >
     <figure class="hidden md:flex items-center w-36">
-        <a href={`/${lang}/`}>
+        <a href={`/${lang}/home`}>
             <img
                 src="https://assets.spaceappschallenge.org/media/images/SpaceAppsLogo_Default_2ColorWhi.width-440.jpegquality-60.png"
                 alt="Space Apps"
@@ -44,7 +44,10 @@ const { transparent } = Astro.props;
         const select = document.getElementById('languageSelect');
         select.addEventListener('change', function() {
             const lang = this.value;
-            window.location.href = `/${lang}/colegio`;
+            const currentPath = window.location.pathname;
+            const pathParts = currentPath.split('/');
+            const page = pathParts[pathParts.length - 1] || 'home'; 
+            window.location.href = `/${lang}/${page}`;
         });
     });
 
@@ -62,6 +65,7 @@ const { transparent } = Astro.props;
         }
     }
 </script>
+
 
 <style>
     #languageSelect {

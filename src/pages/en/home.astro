@@ -6,7 +6,6 @@ import Layout from "../../layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import Competition from "../../components/sections/Competition.astro";
 import Cards from "../../components/sections/Cards.astro";
-import CountDown from "../../components/organisms/CountDown.astro";
 
 
 const lang = getLangFromUrl(Astro.url);
@@ -18,9 +17,9 @@ const t = useTranslations(lang);
 		<CTAFull 
 			fullHeight
 			background={{from: "#105bd8", to: "#0b3d91"}}
-			href="#school-form"
-			title="¡Space Fest 2024 ya está aquí!"
-			body={`Sé parte del primer space Fest del Ecuador. Creamos la Comunidad que impulsa el desarrollo de la industria espacial en el Ecuador \n \n ¿Te apuntas el reto?`}
+			href="#competition"
+			title={t('ctaHome.title')}
+			body={t('ctaHome.body')}
 			image={Rocket}
 		/>
 		
@@ -41,11 +40,11 @@ const t = useTranslations(lang);
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
-			const scrollButton = document.querySelector('a[href="#FormSection"]');
+			const scrollButton = document.querySelector('a[href="#competition"]');
 			if (scrollButton) {
 				scrollButton.addEventListener('click', function(event) {
 					event.preventDefault();
-					const targetSection = document.getElementById('FormSection'); 
+					const targetSection = document.getElementById('competition'); 
 					if (targetSection) {
 						targetSection.scrollIntoView({ behavior: 'smooth' });
 					}
