@@ -18,7 +18,7 @@ export default defineConfig({
     tailwind(),
     storyblok({
       // accessToken: import.meta.env.PUBLIC_STORYBLOK_TOKEN || env.PUBLIC_STORYBLOK_TOKEN,
-      accessToken: rrYkNYGhAGfZVPZM17Mregtt,
+      accessToken: 'rrYkNYGhAGfZVPZM17Mregtt',
       components: {
         page: 'storyblok/Page',
         timelineSection: 'storyblok/TimelineSectionSB',
