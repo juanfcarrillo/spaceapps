@@ -28,6 +28,8 @@ export default defineConfig({
         imageTextSection: 'storyblok/ImageTextSectionSB',
         ctaFull: 'storyblok/CTAFullSB',
         faqSection: 'storyblok/FAQsectionSB',
+        competition: 'storyblok/CompetitionSB',
+        cardSectionStyle2: 'storyblok/CardSection2SB',
       },
       apiOptions: {
         // Choose your Storyblok space region

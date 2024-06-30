@@ -4,12 +4,13 @@ import CTAFull from "../../components/sections/CTAFull.astro"
 import WhySection from "../../components/sections/WhySection.astro"
 import Layout from "../../layouts/Layout.astro"
 import { getLangFromUrl, useTranslations } from "../../i18n/utils"
-import Competition from "../../components/sections/Competition.astro"
+import CompetitionSection from "../../components/sections/Competition.astro"
 import Cards from "../../components/sections/Cards.astro"
 import TimelineSection from "../../components/organisms/TimelineSection.astro"
 import Divider from "../../components/atoms/Divider.astro"
 import SponsorsSection from "../../components/sections/SponsorsSection.astro"
 import FormSection from "../../components/sections/FormSection.astro"
+import CEcuador from "../../assets/ComunidadEcuador.png"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -26,7 +27,18 @@ const t = useTranslations(lang)
             image={Rocket}
         />
 
-        <Competition />
+        <CompetitionSection
+		title={t('comp.title')}
+		description={t('comp.description')}
+		items={[
+		  { icon: '📚', title: t('comp.access.title'), description: t('comp.access.description') },
+		  { icon: '🌐', title: t('comp.connect.title'), description: t('comp.connect.description') },
+		  { icon: '🏆', title: t('comp.aval.title'), description: t('comp.aval.description') },
+		  { icon: '🚀', title: t('comp.solutions.title'), description: t('comp.solutions.description') },
+		  { icon: '🎁', title: t('comp.prizes.title'), description: t('comp.prizes.description') },
+		]}
+		image={CEcuador}
+	    />
 
         <!-- 3 Time line -->
         <Divider />
@@ -145,7 +157,18 @@ const t = useTranslations(lang)
         />
         <Divider />
 
-        <Cards />
+		<Cards
+		title={t('awards.title')}
+		description={t('awards.description')}
+		categories={[
+		  { title: t('awards.category1.title'), description: t('awards.category1.description') },
+		  { title: t('awards.category2.title'), description: t('awards.category2.description') },
+		  { title: t('awards.category3.title'), description: t('awards.category3.description') },
+		  { title: t('awards.category4.title'), description: t('awards.category4.description') },
+		  { title: t('awards.category5.title'), description: t('awards.category5.description') },
+		  { title: t('awards.category6.title'), description: t('awards.category6.description') },
+		]}
+	  />
 
         <Divider />
 

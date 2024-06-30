@@ -1,0 +1,25 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import CompetitionSection from '../components/sections/Competition.astro';
+
+const { blok } = Astro.props;
+
+interface Item {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+---
+
+<CompetitionSection
+    {...storyblokEditable(blok)}
+    title={blok.title}
+    description={blok.description}
+    items={blok.items.map((item: Item) => ({
+        icon: item.icon,
+        title: item.title,
+        description: item.description,
+    }))}
+    image={{src: blok.image[0]?.filename} as any}
+/>
