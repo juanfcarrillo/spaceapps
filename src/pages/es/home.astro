@@ -4,14 +4,13 @@ import CTAFull from "../../components/sections/CTAFull.astro"
 import WhySection from "../../components/sections/WhySection.astro"
 import Layout from "../../layouts/Layout.astro"
 import { getLangFromUrl, useTranslations } from "../../i18n/utils"
-import CompetitionSection from "../../components/sections/Competition.astro"
 import Cards from "../../components/sections/Cards.astro"
 import TimelineSection from "../../components/organisms/TimelineSection.astro"
 import Divider from "../../components/atoms/Divider.astro"
 import SponsorsSection from "../../components/sections/SponsorsSection.astro"
 import FormSection from "../../components/sections/FormSection.astro"
 import CEcuador from "../../assets/ComunidadEcuador.png"
-
+import CompetitionSection from "../../components/sections/Competition.astro"
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
