@@ -19,7 +19,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install 
+          npm install
+
+      - name: Set env vars
+        run: |
+          echo "PUBLIC_STORYBLOK_TOKEN=${{ secrets.STORYBLOK_TOKEN }}" >> .env
 
       - name: Build
         run: |
