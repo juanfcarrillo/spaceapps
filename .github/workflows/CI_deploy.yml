@@ -28,7 +28,7 @@ jobs:
           export $(cat .env | xargs)
           echo $PUBLIC_STORYBLOK_TOKEN
         env:
-          STORYBLOK_TOKEN: ${{ vars.PUBLIC_STORYBLOK_TOKEN }}
+          STORYBLOK_TOKEN: test
 
       
       - name: Build
