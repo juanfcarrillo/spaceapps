@@ -1,7 +1,6 @@
 on:
-  push:
-    branches:
-      - fix/build-en
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   upload:
