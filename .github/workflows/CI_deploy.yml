@@ -23,6 +23,7 @@ jobs:
       - name: Set env vars
         run: |
           echo "PUBLIC_STORYBLOK_TOKEN=${{ secrets.STORYBLOK_TOKEN }}" >> .env
+          cat .env
 
       - name: Build
         run: |
