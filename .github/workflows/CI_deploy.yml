@@ -1,6 +1,7 @@
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - main
 
 jobs:
   upload:
@@ -22,11 +23,7 @@ jobs:
 
       - name: Set env vars
         run: |
-          echo "$STORYBLOK_TOKEN"
           echo "PUBLIC_STORYBLOK_TOKEN=$STORYBLOK_TOKEN" >> .env
-          cat .env
-          export $(cat .env | xargs)
-          echo $PUBLIC_STORYBLOK_TOKEN
         env:
           STORYBLOK_TOKEN: ${{ vars.PUBLIC_STORYBLOK_TOKEN }}
 
