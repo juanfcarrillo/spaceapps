@@ -24,6 +24,8 @@ jobs:
         run: |
           echo "PUBLIC_STORYBLOK_TOKEN=${{ secrets.STORYBLOK_TOKEN }}" >> .env
           cat .env
+          export $(cat .env | xargs)
+          echo $PUBLIC_STORYBLOK_TOKEN
 
       - name: Build
         run: |
