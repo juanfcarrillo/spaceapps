@@ -22,7 +22,7 @@ jobs:
 
       - name: Set env vars
         run: |
-          echo "PUBLIC_STORYBLOK_TOKEN=${{ secrets.STORYBLOK_TOKEN }}" >> .env
+          echo "PUBLIC_STORYBLOK_TOKEN=${{ vars.PUBLIC_STORYBLOK_TOKEN }}" >> .env
           cat .env
           export $(cat .env | xargs)
           echo $PUBLIC_STORYBLOK_TOKEN
