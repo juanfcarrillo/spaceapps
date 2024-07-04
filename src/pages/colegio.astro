@@ -1,51 +1,18 @@
 ---
-import Rocket from "../assets/3DRocket.png";
-import Divider from "../components/atoms/Divider.astro";
-import CountDown from "../components/organisms/CountDown.astro";
-import FAQ from "../components/faq/FAQ.astro";
-import CTAFull from "../components/sections/CTAFull.astro";
-import CondritaSection from "../components/sections/CondritaSection.astro";
-import NeedKnowSection from "../components/sections/NeedKnowSection.astro";
-import PrizesSections from "../components/sections/PrizesSections.astro";
-import ReasonsSection from "../components/sections/ReasonsSection.astro";
-import SchoolFormSection from "../components/sections/SchoolFormSection.astro";
-import SponsorsSection from "../components/sections/SponsorsSection.astro";
-import TimelineSections from "../components/sections/TimelineSections.astro";
-import WhySection from "../components/sections/WhySection.astro";
-import Layout from "../layouts/Layout.astro";
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+import Layout from '../layouts/Layout.astro';
+import { useStoryblokApi } from '@storyblok/astro';
+
+const storyblokApi = useStoryblokApi()
+
+const { data } = await storyblokApi.get("/cdn/stories/colegio", {
+  version: "draft",
+});
+const content = data.story.content;
 ---
 
 <Layout title="Condrita Space Apps">
 	<main class="w-full h-full scroll-smooth">
-		<CTAFull 
-			fullHeight
-			background={{from: "#105bd8", to: "#0b3d91"}}
-			href="#school-form"
-			title="Contrita Campamento de Verano Espacial "
-			body={`¡La aventura te espera!\nInscríbete al Campamento Espacial más grande del país.`}
-			image={Rocket}
-		/>
-		<!-- <StoryblokComponent blok={content} /> -->
-		<Divider />
-		<CountDown
-			countdownDate="jul 11, 2024 10:00:00"
-		/>
-		<ReasonsSection />
-		<Divider />
-		<CondritaSection />
-		<Divider />
-		<TimelineSections />
-		<Divider />
-		<PrizesSections />
-		<Divider />
-		<WhySection />
-		<Divider />
-		<NeedKnowSection />
-		<Divider />
-		<SponsorsSection />
-		<Divider />
-		<SchoolFormSection />
-		<Divider/>
-		<FAQ />
+		<StoryblokComponent blok={content} />
 	</main>
 </Layout>

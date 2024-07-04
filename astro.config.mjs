@@ -28,6 +28,8 @@ export default defineConfig({
         imageTextSection: 'storyblok/ImageTextSectionSB',
         ctaFull: 'storyblok/CTAFullSB',
         faqSection: 'storyblok/FAQsectionSB',
+        carousel: 'storyblok/CarouselSB',
+        schoolFormSection: 'storyblok/SchoolFormSectionSB',
       },
       apiOptions: {
         // Choose your Storyblok space region
@@ -36,6 +38,6 @@ export default defineConfig({
     })
   ],
   redirects: {
-    '/': '/es/colegio'  
+    '/': '/colegio'  
   }
 });
