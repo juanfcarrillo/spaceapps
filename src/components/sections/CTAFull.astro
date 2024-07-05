@@ -4,7 +4,7 @@ interface Props {
     title?: string;
     body?: string;
     button?: string;
-    href?: string;
+    href?: any;
     fullHeight?: boolean;
     background?:
         | {
@@ -17,7 +17,8 @@ interface Props {
 
 import type { ImageMetadata } from "astro";
 
-const { image, fullHeight, background, backgroundImage } = Astro.props;
+const { image, fullHeight, background, backgroundImage, href } = Astro.props;
+
 
 const backgroundColor =
     typeof background === "string"
@@ -59,8 +60,7 @@ const svgBackground = "../../../background.svg";
         </p>
         <a
             class="bg-ns-base w-fit px-8 py-4 text-ns-white"
-            target="_blank"
-            href={Astro.props.href ?? "#"}
+            href={href.url ?? "#"}
         >
             {Astro.props.button ?? "Inscríbete"}
         </a>
