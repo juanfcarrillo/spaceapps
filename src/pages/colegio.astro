@@ -11,7 +11,7 @@ const { data } = await storyblokApi.get("/cdn/stories/colegio", {
 const content = data.story.content;
 ---
 
-<Layout title={t('header.title')}>
+<Layout title="Colegio">
 	<main class="w-full h-full scroll-smooth">
 		<StoryblokComponent blok={content} />
 	</main>

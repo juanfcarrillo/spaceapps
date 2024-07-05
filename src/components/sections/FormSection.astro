@@ -7,15 +7,14 @@ const t = useTranslations(lang);
 interface Props {
     title: string,
     description: string,
-    formSrc: string
+    formSrc: any
 }
 const {title, description, formSrc} = Astro.props
-
 ---
 
 
 <section class="flex flex-col gap-8 py-8 md:px-24 md:py-16">
     <h2 class="text-center text-3xl font-bold">{title}</h2>
     <p class="text-center">{description}</p>
-     <Form formSrc={formSrc}/>
+     <Form formSrc={formSrc.url}/>
 </section>
