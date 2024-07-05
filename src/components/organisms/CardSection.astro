@@ -37,7 +37,7 @@ const { title, subtitle, extra , items, linkButton} = Astro.props;
         <ul class="flex items-center justify-center h-full">
             {linkButton.map((item) =>
               (
-                <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-1/6 mr-1">
+                <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-full md:w-1/6 mr-1">
                 <a href={item.link}>
                     {item.textContent}
                 </a>
