@@ -29,9 +29,6 @@ const backgroundColor =
         : background;
 
 const { from = "", to = "" } = backgroundColor || {};
-
-
-const svgBackground = "../../../background.svg";
 ---
 
 <section
@@ -41,10 +38,10 @@ const svgBackground = "../../../background.svg";
             "h-[100vh]": fullHeight,
             "bg-gradient gradient-from gradient-to": background,
             "bg-image": backgroundImage,
-            "text-ns-base": background,
+            "text-ns-base": background || backgroundImage,
         },
     ]}
-    style={`background-image: url(${svgBackground}); background-size: cover; background-repeat: no-repeat;`}
+    style={`background-image: url(${backgroundImage}); background-size: cover; background-repeat: no-repeat;`}
 >
     <div
         class="flex flex-1 max-w-xl flex-col gap-6 lg:w-1/2 items-center lg:items-start"
