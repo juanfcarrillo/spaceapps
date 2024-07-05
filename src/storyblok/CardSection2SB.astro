@@ -1,0 +1,22 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import Cards from '../components/sections/Cards.astro';
+
+const { blok } = Astro.props;
+
+interface Category {
+  title: string;
+  description: string;
+}
+
+---
+
+<Cards
+    {...storyblokEditable(blok)}
+    title={blok.title}
+    description={blok.description}
+    categories={blok.categories.map((category: Category) => ({
+        title: category.title,
+        description: category.description,
+    }))}
+/>

@@ -29,7 +29,9 @@ export default defineConfig({
         ctaFull: 'storyblok/CTAFullSB',
         faqSection: 'storyblok/FAQsectionSB',
         carousel: 'storyblok/CarouselSB',
-        schoolFormSection: 'storyblok/SchoolFormSectionSB',
+        competition: 'storyblok/CompetitionSB',
+        cardSectionStyle2: 'storyblok/CardSection2SB',
+        formSection: 'storyblok/FormSectionSB',
       },
       apiOptions: {
         // Choose your Storyblok space region

@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  items: Array<{
+    icon: string;
+    title: string;
+    description: string;
+  }>;
+  image: ImageMetadata;
+}
+
+import type { ImageMetadata } from "astro";
+const { title, description, items, image } = Astro.props;
+---
+
+<section class="mx-auto w-full max-w-5xl p-6 bg-ns-white rounded-lg">
+  <div class="container px-4 md:px-6">
+    <div class="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+      <div class="flex flex-col justify-center space-y-4">
+        <div class="space-y-2">
+          <h1 class="text-3xl tracking-tighter sm:text-5xl xl:text-6xl/none text-ns-base">
+            <strong>{title}</strong>
+          </h1>
+          <p class="max-w-[600px] text-ns-gray-dark md:text-xl">
+            {description}
+          </p>
+        </div>
+        <div class="grid gap-4">
+          {items.map((item) => (
+            <div class="flex items-start gap-4">
+              <span class="h-6 w-6 text-ns-primary">{item.icon}</span>
+              <div>
+                <h3 class="text-lg text-ns-base">{item.title}</h3>
+                <p class="text-ns-gray-light">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="relative overflow-hidden rounded-xl lg:order-last">
+        <img
+          src={image.src}
+          alt="Competition Image"
+          class="w-4/5 h-3/3 mx-auto rounded-lg"
+        />
+      </div>
+    </div>
+  </div>
+</section>

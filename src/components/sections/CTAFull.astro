@@ -38,10 +38,10 @@ const { from = "", to = "" } = backgroundColor || {};
             "h-[100vh]": fullHeight,
             "bg-gradient gradient-from gradient-to": background,
             "bg-image": backgroundImage,
-            "text-ns-white": background,
+            "text-ns-base": background || backgroundImage,
         },
     ]}
-    style={`${backgroundImage ? `background-image: url(${backgroundImage})` : ""}`}
+    style={`background-image: url(${backgroundImage}); background-size: cover; background-repeat: no-repeat;`}
 >
     <div
         class="flex flex-1 max-w-xl flex-col gap-6 lg:w-1/2 items-center lg:items-start"
@@ -63,7 +63,7 @@ const { from = "", to = "" } = backgroundColor || {};
         </a>
     </div>
     <figure
-        class="flex mt-12 lg:mt-0 lg:w-full flex-1 max-w-[300px] min-w-[175px] flex-col items-center justify-center gap-4 lg:items-start"
+        class="flex mt-12 lg:mt-0 lg:w-full flex-1 max-w-[400px] min-w-[175px] flex-col items-center justify-center gap-4 lg:items-start"
     >
         <img src={image.src} alt="Rocket" />
     </figure>

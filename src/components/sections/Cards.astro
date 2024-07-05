@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  categories: Array<{
+    title: string;
+    description: string;
+  }>;
+}
+
+const { title, description, categories } = Astro.props;
+---
+
+<div class="flex-col min-h-[100vh] bg-ns-white text-ns-base">
+  <main class="flex-1 flex items-center justify-center flex-col">
+    <div class="w-full max-w-4xl text-center p-6">
+      <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-ns-base p-10">
+        {title}
+      </h1>
+      <p class="text-ns-gray-dark md:text-xl mb-6" set:html={description}></p>
+    </div>
+    <section class="w-full max-w-6xl p-6 bg-ns-white rounded-lg shadow-lg">
+      <div class="container px-4 md:px-6">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {categories.map((category) => (
+            <div class="bg-ns-white rounded-lg shadow p-6">
+              <h3 class="text-lg font-bold text-ns-base">{category.title}</h3>
+              <p class="text-ns-gray-light p-6" set:html={category.description}></p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

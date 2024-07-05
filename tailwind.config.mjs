@@ -6,13 +6,14 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'ns-primary': '#105bd8',
-				'ns-primary-darker': '#0b3d91',
+				'ns-primary': '#da0d12',
+				'ns-primary-darker': '#da0d12',
 				'ns-primary-darkest': '#061f4a',
 				'ns-base': '#212121',
 				'ns-gray-dark': '#323a45',
 				'ns-gray-light': '#aeb0b5',
 				'ns-white': '#ffffff',
+				'ns-primary': '', 
 			}
 		},
 	},
