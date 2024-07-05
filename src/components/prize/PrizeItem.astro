@@ -15,7 +15,7 @@ const { title, description, number, isFirst, prices } = Astro.props;
     <h5 class="text-center text-xl font-bold">{title}</h5>
     {
         prices
-            ? prices.map((price, index) => <p key={index} class="text-sm"><span class="text-2xl">•</span> {price}</p>)
+            ? prices.map((price) => <p class="text-sm"><span class="text-2xl">•</span> {price}</p>)
             : <p set:html={description}></p> 
     }
 </li>
