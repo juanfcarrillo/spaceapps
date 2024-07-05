@@ -36,6 +36,6 @@ export default defineConfig({
     })
   ],
   redirects: {
-    '/': '/es/colegio'  
+    '/': '/colegio'  
   }
 });
