@@ -2,9 +2,10 @@
 
 interface Props {
     formSrc: string
+    formId: string
 }
-const {formSrc} = Astro.props
+const {formSrc, formId} = Astro.props
 
 ---
 
-<div class="_form_3"></div><script src={formSrc} charset="utf-8"></script>
+<div class="_form_3" id={formId}></div><script src={formSrc} charset="utf-8"></script>

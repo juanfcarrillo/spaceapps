@@ -24,8 +24,9 @@ const { transparent } = Astro.props;
         </a>
     </figure>
     <ul class="flex items-center justify-center gap-6">
-        <li><a href={`/${lang}/home`}>{t('nav.home')}</a></li>
-        <li><a href={`/${lang}/colegio`}>{t('nav.about')}</a></li>
+        <li><a href={`/home`}>{t('nav.home')}</a></li>
+        <li><a href={`/colegio`}>{t('nav.about')}</a></li>
+        <!-- 
         <li class="relative">
             <select id="languageSelect" class="hover:underline focus:outline-none bg-transparent text-ns-white appearance-none pr-8">
                 <option value="es" selected={lang === 'es'}>Español</option>
@@ -35,11 +36,13 @@ const { transparent } = Astro.props;
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-ns-white font-bold">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.59 7.41L10 11.83l4.41-4.42L16 9l-6 6-6-6z"/></svg>
             </div>
-        </li>        
+        </li>-->        
     </ul>
 </nav>
 
 <script type="module">
+
+    /*
     document.addEventListener('DOMContentLoaded', () => {
         const select = document.getElementById('languageSelect');
 
@@ -56,7 +59,7 @@ const { transparent } = Astro.props;
             });
         }
     });
-
+    */
     const navbar = document.getElementById("navbar");
     if (navbar) {
         const isTransparent = navbar.classList.contains("bg-ns-primary");
