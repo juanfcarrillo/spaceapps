@@ -19,7 +19,7 @@ const t = useTranslations(lang);
 
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("/cdn/stories/home", {
-  version: "draft",
+  version: import.meta.env.DEV ? "draft" : "published",
 });
 const content = data.story.content;
 ---
