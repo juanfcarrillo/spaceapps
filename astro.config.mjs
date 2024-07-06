@@ -9,7 +9,7 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   output: "server",
   integrations: [tailwind(), storyblok({
-    accessToken: import.meta.env.STORYBLOK_TOKEN || env.STORYBLOK_TOKEN,
+    accessToken: import.meta.env.PUBLIC_STORYBLOK_TOKEN || env.PUBLIC_STORYBLOK_TOKEN,
     components: {
       page: 'storyblok/Page',
       timelineSection: 'storyblok/TimelineSectionSB',
