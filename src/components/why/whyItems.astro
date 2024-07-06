@@ -10,9 +10,9 @@ const { items } = Astro.props;
 ---
 
 <div class="flex justify-center">
-    <ul class="w-full flex flex-row gap-2 justify-evenly items-center mt-8 max-w-screen-lg px-4">
+    <ul class="w-full flex flex-col md:flex-row gap-4 justify-evenly items-center mt-8 max-w-screen-lg px-4">
         {items.map((item) => (
-            <li class={`flex flex-col items-center`}> <!-- Ajustamos el ancho de los elementos -->
+            <li class="flex flex-col items-center w-full md:w-auto"> <!-- Ajustamos el ancho de los elementos -->
                 <PrizeItem 
                     title={item.title} 
                     description={item.description} 
