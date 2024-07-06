@@ -16,7 +16,7 @@ interface Props {
 const { title, message, items } = Astro.props;
 ---
 
-<section class="flex flex-col gap-8 px-2 py-8 md:px-24 md:py-16">
+<section class="flex flex-col gap-8 px-4 py-8 md:px-24 md:py-16">
     <h3 class="text-center text-3xl font-bold">{title}</h3>
     <WhyItems items={items} />
     <p class="text-center" set:html={message}></p>
