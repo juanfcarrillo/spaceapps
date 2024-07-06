@@ -9,6 +9,11 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   output: "server",
+  server: {
+    headers: {
+      'Cache-Control': 'no-store',
+    },
+  },
   adapter: cloudflare({
     platformProxy: {
       enabled: true
