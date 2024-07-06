@@ -18,11 +18,12 @@
     "@storyblok/astro": "^4.1.0",
     "astro": "^4.10.1",
     "tailwindcss": "^3.4.4",
+    "tailwindcss-animatecss": "^3.0.5",
     "typescript": "^5.4.5",
     "vite": "^5.3.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240605.0",
-    "wrangler": "^3.60.0"
+    "wrangler": "^3.60.3"
   }
 }

@@ -13,10 +13,10 @@ const { transparent } = Astro.props;
 
 <nav
     id="navbar"
-    class={`fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between ${transparent ? 'bg-transparent' : 'bg-ns-primary-darker'} text-ns-white px-32 py-6 border-solid border-y-0 border-transparent`}
+    class={`fixed z-50 transition-all ease-linear duration-100 w-full flex justify-center md:justify-between bg-ns-primary-darker text-ns-white px-32 py-6 border-solid border-y-0 border-transparent`}
 >
     <figure class="hidden md:flex items-center w-36">
-        <a href={`/${lang}/`}>
+        <a href={`/${lang}/home`}>
             <img
                 src="https://assets.spaceappschallenge.org/media/images/SpaceAppsLogo_Default_2ColorWhi.width-440.jpegquality-60.png"
                 alt="Space Apps"
@@ -24,44 +24,59 @@ const { transparent } = Astro.props;
         </a>
     </figure>
     <ul class="flex items-center justify-center gap-6">
-        <li><a href={`/${lang}/`}>{t('nav.home')}</a></li>
-        <li><a href={`/${lang}/colegio`}>{t('nav.about')}</a></li>
+        <li><a href={`/home`}>{t('nav.home')}</a></li>
+        <li><a href={`/colegio`}>{t('nav.about')}</a></li>
+        <!-- 
         <li class="relative">
-            <select id="languageSelect" class="hover:underline focus:outline-none bg-transparent text-ns-white appearance-none pr-8" onchange="changeLanguage(this.value)">
+            <select id="languageSelect" class="hover:underline focus:outline-none bg-transparent text-ns-white appearance-none pr-8">
                 <option value="es" selected={lang === 'es'}>Español</option>
                 <option value="en" selected={lang === 'en'}>English</option>
                 <option value="kw" selected={lang === 'kw'}>Kichwa</option>
-            </select>
+            </select>            
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-ns-white font-bold">
                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.59 7.41L10 11.83l4.41-4.42L16 9l-6 6-6-6z"/></svg>
             </div>
-        </li>        
+        </li>-->        
     </ul>
 </nav>
 
 <script type="module">
+
+    /*
     document.addEventListener('DOMContentLoaded', () => {
         const select = document.getElementById('languageSelect');
-        select.addEventListener('change', function() {
-            const lang = this.value;
-            window.location.href = `/${lang}/colegio`;
-        });
-    });
 
+        function changeLanguage(lang) {
+            const currentPath = window.location.pathname;
+            const pathParts = currentPath.split('/');
+            const page = pathParts[2] ? pathParts.slice(2).join('/') : 'home'; 
+            window.location.href = `/${lang}/${page}`;
+        }
+
+        if (select) {
+            select.addEventListener('change', function() {
+                changeLanguage(this.value);
+            });
+        }
+    });
+    */
     const navbar = document.getElementById("navbar");
     if (navbar) {
-        const isTransparent = navbar.classList.contains("bg-transparent");
+        const isTransparent = navbar.classList.contains("bg-ns-primary");
 
         if (isTransparent) {
             document.addEventListener("scroll", () => {
                 if (navbar) {
-                    navbar.classList.toggle("bg-ns-primary-darker", window.scrollY > 36);
+                    navbar.classList.toggle("bg-ns-primary", window.scrollY > 36);
                     navbar.classList.toggle("bg-transparent", window.scrollY < 36);
                 }
             });
         }
     }
 </script>
+
+
+
 <style>
     #languageSelect {
       background-color: transparent;
@@ -84,5 +99,4 @@ const { transparent } = Astro.props;
     #languageSelect::-ms-expand {
       display: none; 
     }
-  </style>
-  
+</style>

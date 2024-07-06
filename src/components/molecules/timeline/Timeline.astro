@@ -6,6 +6,7 @@ export interface TimelineItemProps {
     description: string;
     isActive: boolean;
     isOdd?: boolean;
+    isUnique?: boolean;
 }
 
 interface Props {
@@ -27,6 +28,7 @@ const { timelineItems = [] } = Astro.props;
         description={event.description}
         isActive={event.isActive}
         isOdd={index % 2 !== 0}
+        isUnique={timelineItems.length==1}
       />
     ))}
 </ul>
