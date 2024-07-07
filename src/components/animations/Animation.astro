@@ -1,0 +1,21 @@
+---
+export interface AnimationProps {
+  className: string;
+}
+
+interface Props extends AnimationProps {}
+
+const {
+  className
+} = Astro.props;
+
+---
+<div class={className}>
+  <slot />
+</div>
+
+<script>
+  import { Observer } from "tailwindcss-intersect";
+
+  Observer.start();
+</script>

@@ -1,23 +1,28 @@
 ---
 import WhyItems from "../why/whyItems.astro";
+import Animation from "../animations/Animation.astro";
 
 export interface WhyItemProps {
-    title: string;
-    description: string;
-    number: string;
+  title: string;
+  description: string;
+  number: string;
 }
 
 interface Props {
-    title: string;
-    message: string;
-    items: WhyItemProps[];
+  title: string;
+  message: string;
+  items: WhyItemProps[];
 }
 
 const { title, message, items } = Astro.props;
 ---
 
-<section class="flex flex-col gap-8 px-4 py-8 md:px-24 md:py-16">
+<Animation
+  className="opacity-0 intersect:animate-fade-up animate-duration-[3s]"
+>
+  <section class="flex flex-col gap-8 px-4 py-8 md:px-24 md:py-16">
     <h3 class="text-center text-3xl font-bold">{title}</h3>
     <WhyItems items={items} />
-    <p class="text-center" set:html={message}></p>
-</section>
+    <p class="text-center" set:html={message} />
+  </section>
+</Animation>
