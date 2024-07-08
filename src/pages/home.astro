@@ -13,15 +13,16 @@ import FormSection from "../components/sections/FormSection.astro";
 import CEcuador from "../assets/ComunidadEcuador.png";
 import { useStoryblokApi } from '@storyblok/astro';
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import { loadEnv } from 'vite';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const storyblokApi = useStoryblokApi();
 
-const modeDev = import.meta.env.DEV || false;
+const env = loadEnv("", process.cwd(), 'PUBLIC');
 const { data } = await storyblokApi.get("/cdn/stories/home", {
-  version: modeDev ? "draft" : "published",
+  version: env.PUBLIC_MODE_DEV === "development" ? "draft" : "published",
 });
 
 const content = data.story.content;
