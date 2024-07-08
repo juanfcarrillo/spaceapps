@@ -6,9 +6,11 @@ import Layout from '../layouts/Layout.astro';
 
 const storyblokApi = useStoryblokApi()
 
+const modeDev = import.meta.env.DEV || false;
 const { data } = await storyblokApi.get("/cdn/stories/test-post", {
-  version: "draft",
+  version: modeDev ? "draft" : "published",
 });
+
 const content = data.story.content;
 ---
 

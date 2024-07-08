@@ -5,9 +5,11 @@ import { useStoryblokApi } from '@storyblok/astro';
 
 const storyblokApi = useStoryblokApi()
 
+const modeDev = import.meta.env.DEV || false;
 const { data } = await storyblokApi.get("/cdn/stories/colegio", {
-  version: "draft",
+  version: modeDev ? "draft" : "published",
 });
+
 const content = data.story.content;
 ---
 
