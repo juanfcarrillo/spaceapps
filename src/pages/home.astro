@@ -1,215 +1,33 @@
 ---
-import Rocket from "../assets/3DRocket3F.png";
-import CTAFull from "../components/sections/CTAFull.astro";
-import WhySection from "../components/sections/WhySection.astro";
-import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import CompetitionSection from "../components/sections/Competition.astro";
-import Cards from "../components/sections/Cards.astro";
-import TimelineSection from "../components/organisms/TimelineSection.astro";
-import Divider from "../components/atoms/Divider.astro";
-import SponsorsSection from "../components/sections/SponsorsSection.astro";
-import FormSection from "../components/sections/FormSection.astro";
-import CEcuador from "../assets/ComunidadEcuador.png";
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+import Layout from '../layouts/Layout.astro';
 import { useStoryblokApi } from '@storyblok/astro';
-import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const storyblokApi = useStoryblokApi()
 
-const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("/cdn/stories/home", {
   version: "draft",
 });
 const content = data.story.content;
 ---
 
-<Layout title={t("header.title")}>
-  <main class='w-full h-full scroll-smooth'>
+<Layout title="home">
+	<main class="w-full h-full scroll-smooth">
+		<StoryblokComponent blok={content} />
+	</main>
 
-	<!-- 9 Difunden-->
-	<StoryblokComponent blok={content} />
-
-    <CTAFull
-      fullHeight
-      background={{ from: "#105bd8", to: "#0b3d91" }}
-      href="#competition"
-      title={t('ctaHome.title')}
-      body={t('ctaHome.body')}
-      image={Rocket}
-    />
-
-    <CompetitionSection
-      title={t('comp.title')}
-      description={t('comp.description')}
-      items={[
-        { icon: '📚', title: t('comp.access.title'), description: t('comp.access.description') },
-        { icon: '🌐', title: t('comp.connect.title'), description: t('comp.connect.description') },
-        { icon: '🏆', title: t('comp.aval.title'), description: t('comp.aval.description') },
-        { icon: '🚀', title: t('comp.solutions.title'), description: t('comp.solutions.description') },
-        { icon: '🎁', title: t('comp.prizes.title'), description: t('comp.prizes.description') },
-      ]}
-      image={CEcuador}
-    />
-
-    <!-- Secciones de línea de tiempo -->
-    <Divider />
-
-    <WhySection
-      title={t("why.section2Home.title")}
-      message={t("why.section2Home.description")}
-      items={[
-        {
-          title: t("why.section2Home.title1"),
-          description: t("why.section2Home.description1"),
-          number: "🚀",
-        },
-        {
-          title: t("why.section2Home.title2"),
-          description: t("why.section2Home.description2"),
-          number: "🎓",
-        },
-        {
-          title: t("why.section2Home.title3"),
-          description: t("why.section2Home.description3"),
-          number: "📊",
-        },
-      ]}
-    />
-    <Divider />
-
-    <TimelineSection
-      title={"Julio"}
-      subtitle={""}
-      timelineItems={[
-        {
-          title: "Condrita Campamento de Verano Espacial para niños y adolescentes",
-          date: "8 - 31 de julio",
-          description:
-            "🚀 Fomentamos la curiosidad por descubrir el espacio en nuestros niños y adolescentes, a través de educación de calidad gratuita y accesibles. Los participantes de los retos tendrán la oportunidad de ganar fabulosos premios.",
-          isActive: true,
-        },
-        {
-          title: "Ecuador Space Summit - Strategies for a new economy",
-          date: "23 de julio",
-          description:
-            "🚀 Sé parte del Primer Summit enfocado en desarrollar la industria espacial en el país. Crea conexiones poderosas dentro de la industria y visualiza todas las oportunidades de crecimiento para emprender.",
-          isActive: true,
-        },
-      ]}
-    />
-
-    <TimelineSection
-      title={"Agosto"}
-      subtitle={""}
-      timelineItems={[
-        {
-          title: "Final Competition - Condrita Campamento de Verano Espacial para niños y adolescentes",
-          date: "1 de agosto",
-          description:
-            "🚀 Descubre el espacio en familia y conoce a los ganadores de los retos del Condrita Campamento de Verano Espacial.",
-          isActive: true,
-        },
-        {
-          title: "Space Summer Bootcamp",
-          date: "1 al 30 de agosto",
-          description:
-            "🚀 Sé parte de nuestro Bootcamp y nuestro desafíos de innovación abierta enfocados en FoodTech, AgroTech y Climatech Solutions.",
-          isActive: true,
-        },
-        {
-          title: "Inicio de inscripciones NASA Space Apps Challenge Quito 2024",
-          date: "14 de agosto",
-          description:
-            "🚀 Inscríbete al Hackathón de ciencia y tecnología más grande del mundo. Todos son bienvenidos, tenemos un reto para todos.",
-          isActive: true,
-        },
-      ]}
-    />
-    <TimelineSection
-      title={"Septiembre"}
-      subtitle={""}
-      timelineItems={[
-        {
-          title: "Space Bootcamp x Entrepreneurs",
-          date: "2-30 de septiembre",
-          description:
-            "🚀 Formación de talla mundial + Networking: Preparamos un bootcamp para impulsar las habilidades de emprendimiento en la industria espacial.",
-          isActive: true,
-        },
-      ]}
-    />
-
-    <TimelineSection
-      title={"Octubre"}
-      subtitle={""}
-      timelineItems={[
-        {
-          title: "Lanzamiento NASA Space Apps Challenge Quito 2024",
-          date: "4 de octubre",
-          description:
-            "🚀 Sé parte del lanzamiento del Hackathón más grande de ciencia y tecnología en el mundo, ahora en la mitad del mundo.",
-          isActive: true,
-        },
-        {
-          title: "Hackathón NASA Space Apps Challenge",
-          date: "5 y 6 de octubre",
-          description:
-            "🚀 Vive 2 días de hackathón y desarrolla soluciones en los diferentes retos de la NASA. Este hackatón está abierto para estudiantes de escuela, colegio, universidad, investigadores, profesores, aficionados, locos por el espacio, desarrolladores, científicos, diseñadores, storytellers, creadores de contenido y aquellos que han soñado al menos una vez con ir a la luna. ¡Bienvenidos TODOS!",
-          isActive: true,
-        },
-        {
-          title: "Final Competition",
-          date: "8 de octubre",
-          description:
-            "🚀 Vive la fiesta científica y tecnológica más grande del país y descubre a los ganadores del NASA Space Apps Challenge Quito 2024. El equipo ganador será parte de la misión empresarial de Ecuador que realizará una inmersión 360 a las instalaciones de la NASA y los Laboratorios del MILO Space Science Institute.",
-          isActive: true,
-        },
-      ]}
-    />
-    <Divider />
-
-    <Cards
-      title={t('awards.title')}
-      description={t('awards.description')}
-      categories={[
-        { title: t('awards.category1.title'), description: t('awards.category1.description') },
-        { title: t('awards.category2.title'), description: t('awards.category2.description') },
-        { title: t('awards.category3.title'), description: t('awards.category3.description') },
-        { title: t('awards.category4.title'), description: t('awards.category4.description') },
-        { title: t('awards.category5.title'), description: t('awards.category5.description') },
-        { title: t('awards.category6.title'), description: t('awards.category6.description') },
-      ]}
-    />
-
-    <Divider />
-
-    <!-- 7 Mission -->
-    <FormSection
-      title='Sé parte de la misión. Entérate de todos los eventos'
-      description='Participa de manera 100% gratuita durante todo el Space Fest. Inscríbete ahora'
-      formSrc='https://usfq55033.activehosted.com/f/embed.php?id=3'
-      formId="home-form"
-    />
-
-    <!-- 8 Stakeholders -->
-    <SponsorsSection />
-
- 
-  </main>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const scrollButton = document.querySelector('a[href="#FormSection"]');
-      if (scrollButton) {
-        scrollButton.addEventListener("click", function (event) {
-          event.preventDefault();
-          const targetSection = document.getElementById("FormSection");
-          if (targetSection) {
-            targetSection.scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      }
-    });
-  </script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const scrollButton = document.querySelector('a[href="#FormSection"]');
+			if (scrollButton) {
+				scrollButton.addEventListener('click', function(event) {
+					event.preventDefault();
+					const targetSection = document.getElementById('FormSection'); 
+					if (targetSection) {
+						targetSection.scrollIntoView({ behavior: 'smooth' });
+					}
+				});
+			}
+		});
+	</script>
 </Layout>
