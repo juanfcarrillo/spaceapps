@@ -4,7 +4,15 @@ import { defineMiddleware } from "astro:middleware";
 // `context` and `next` are automatically typed
 export const onRequest = defineMiddleware((context, next) => {
     context.locals.STORYBLOK_TOKEN = import.meta.env.STORYBLOK_TOKEN;
-    const baseUrl = import.meta.env.PUBLIC_VERCEL_URL ? new URL(import.meta.env.PUBLIC_VERCEL_URL || "") : context.url;
+
+    let baseUrl
+
+    try {
+        baseUrl = new URL(import.meta.env.PUBLIC_VERCEL_URL);
+    } catch (e) {
+        baseUrl = context.url;
+    }
+
     const { hostname } = baseUrl;
 
     const subdomain = hostname.split('.')[0]
