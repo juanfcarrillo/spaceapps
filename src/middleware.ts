@@ -21,10 +21,10 @@ export const onRequest = defineMiddleware((context, next) => {
 
     context.locals.isDraft = isDraft;
 
+    context.locals.url = context.url;
+
     context.locals.getPageContent = async (page) => {
         const storyblokApi = useStoryblokApi();
-
-        console.log(context.url, "asdasdasds");
 
         const searchParams = new URLSearchParams(context.url.search);
         const published = searchParams.get("_storyblok_published") || undefined;
