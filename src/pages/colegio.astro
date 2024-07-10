@@ -2,17 +2,11 @@
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import Layout from "../layouts/Layout.astro";
 
-// const content = await Astro.locals.getPageContent('colegio');
-const testURl = Astro.locals.url;
-
-console.log(testURl);
+const content = await Astro.locals.getPageContent('colegio');
 ---
 
 <Layout title="Colegio">
-	<p class="mt-24 text-4xl text-black">
-		{JSON.stringify(testURl)}
-	</p>
-	<!-- <main class="w-full h-full scroll-smooth">
+	<main class="w-full h-full scroll-smooth">
 		<StoryblokComponent blok={content} />
 	</main>
 
@@ -32,5 +26,5 @@ console.log(testURl);
 				});
 			}
 		});
-	</script> -->
+	</script>
 </Layout>
