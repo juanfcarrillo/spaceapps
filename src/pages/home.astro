@@ -1,18 +1,8 @@
 ---
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
 import Layout from '../layouts/Layout.astro';
-import { useStoryblokApi } from '@storyblok/astro';
 
-const storyblokApi = useStoryblokApi()
-
-const storyblokApi = useStoryblokApi();
-const { isDraft } = Astro.locals;
-
-const { data } = await storyblokApi.get("/cdn/stories/home", {
-  version: isDraft ? "draft" : "published",
-});
-
-const content = data.story.content;
+const content = await Astro.locals.getPageContent('home');
 ---
 
 <Layout title="home">
