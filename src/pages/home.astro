@@ -19,10 +19,10 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const storyblokApi = useStoryblokApi();
+const { isDraft } = Astro.locals;
 
-const env = loadEnv("", process.cwd(), 'PUBLIC');
 const { data } = await storyblokApi.get("/cdn/stories/home", {
-  version: env.PUBLIC_MODE_DEV === "development" ? "draft" : "published",
+  version: isDraft ? "draft" : "published",
 });
 
 const content = data.story.content;

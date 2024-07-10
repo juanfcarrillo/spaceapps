@@ -3,13 +3,12 @@
 import { useStoryblokApi } from '@storyblok/astro'
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
 import Layout from '../layouts/Layout.astro';
-import { loadEnv } from 'vite';
 
 const storyblokApi = useStoryblokApi()
+const { isDraft } = Astro.locals
 
-const env = loadEnv("", process.cwd(), 'PUBLIC');
 const { data } = await storyblokApi.get("/cdn/stories/test-post", {
-  version: env.PUBLIC_MODE_DEV === "development" ? "draft" : "published",
+  version: isDraft ? "draft" : "published",
 });
 
 const content = data.story.content;

@@ -8,15 +8,15 @@ export const onRequest = defineMiddleware((context, next) => {
 
     const subdomain = hostname.split('.')[0]
 
-    if (hostname.includes("localhost") || hostname.includes("127.0.0.1")) {
-        context.locals.isDraft = true;
-    }
+    context.locals.isDraft = false;
+
+    // if (hostname.includes("localhost") || hostname.includes("127.0.0.1")) {
+    //     context.locals.isDraft = true;
+    // }
 
     if (subdomain.includes("draft")) {
         context.locals.isDraft = true;
     }
-
-    context.locals.isDraft = false;
 
     return next();
 });
