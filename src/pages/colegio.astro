@@ -1,14 +1,8 @@
 ---
-import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
-import Layout from '../layouts/Layout.astro';
-import { useStoryblokApi } from '@storyblok/astro';
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import Layout from "../layouts/Layout.astro";
 
-const storyblokApi = useStoryblokApi()
-
-const { data } = await storyblokApi.get("/cdn/stories/colegio", {
-  version: "draft",
-});
-const content = data.story.content;
+const content = await Astro.locals.getPageContent('colegio');
 ---
 
 <Layout title="Colegio">
@@ -17,14 +11,17 @@ const content = data.story.content;
 	</main>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			const scrollButton = document.querySelector('a[href="#FormSection"]');
+		document.addEventListener("DOMContentLoaded", function () {
+			const scrollButton = document.querySelector(
+				'a[href="#FormSection"]',
+			);
 			if (scrollButton) {
-				scrollButton.addEventListener('click', function(event) {
+				scrollButton.addEventListener("click", function (event) {
 					event.preventDefault();
-					const targetSection = document.getElementById('FormSection'); 
+					const targetSection =
+						document.getElementById("FormSection");
 					if (targetSection) {
-						targetSection.scrollIntoView({ behavior: 'smooth' });
+						targetSection.scrollIntoView({ behavior: "smooth" });
 					}
 				});
 			}
