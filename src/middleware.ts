@@ -24,6 +24,8 @@ export const onRequest = defineMiddleware((context, next) => {
     context.locals.getPageContent = async (page) => {
         const storyblokApi = useStoryblokApi();
 
+        console.log(context.url, "asdasdasds");
+
         const searchParams = new URLSearchParams(context.url.search);
         const published = searchParams.get("_storyblok_published") || undefined;
     
