@@ -29,6 +29,8 @@ export const onRequest = defineMiddleware((context, next) => {
 
     context.locals.isDraft = isDraft;
 
+    context.locals.url = context.url;
+
     context.locals.getPageContent = async (page) => {
         const storyblokApi = useStoryblokApi();
 

@@ -6,5 +6,6 @@ declare namespace App {
 		STORYBLOK_TOKEN: string
 		isDraft: boolean
 		getPageContent: (page: string) => Promise<any>
+		url: URL
 	}
 }
