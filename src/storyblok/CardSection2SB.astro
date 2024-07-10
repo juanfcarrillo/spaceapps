@@ -1,22 +1,26 @@
 ---
-import { storyblokEditable } from '@storyblok/astro';
+import { storyblokEditable, renderRichText } from '@storyblok/astro';
+
 import Cards from '../components/sections/Cards.astro';
 
 const { blok } = Astro.props;
 
 interface Category {
   title: string;
-  description: string;
+  description:any;
 }
 
+console.log(blok)
 ---
+
 
 <Cards
     {...storyblokEditable(blok)}
-    title={blok.title}
-    description={blok.description}
+    title={blok.title} 
+    
+    description={renderRichText(blok.description)}
     categories={blok.categories.map((category: Category) => ({
         title: category.title,
-        description: category.description,
+        description: renderRichText(category.description),
     }))}
 />
