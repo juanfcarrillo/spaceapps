@@ -1,85 +1,89 @@
 ---
 interface Props {
-    image: ImageMetadata;
-    title?: string;
-    body?: string;
-    button?: string;
-    href?: any;
-    fullHeight?: boolean;
-    background?:
-        | {
-              from: string;
-              to: string;
-          }
-        | string;
-    backgroundImage?: string;
+  image: ImageMetadata;
+  title?: string;
+  body?: string;
+  button?: string;
+  href?: any;
+  fullHeight?: boolean;
+  background?:
+    | {
+        from: string;
+        to: string;
+      }
+    | string;
+  backgroundImage?: string;
 }
 
 import type { ImageMetadata } from "astro";
+import Animation from "../animations/Animation.astro";
 
 const { image, fullHeight, background, backgroundImage, href } = Astro.props;
 
-
 const backgroundColor =
-    typeof background === "string"
-        ? {
-              from: background,
-              to: background,
-          }
-        : background;
+  typeof background === "string"
+    ? {
+        from: background,
+        to: background,
+      }
+    : background;
 
 const { from = "", to = "" } = backgroundColor || {};
 ---
 
-<section
+<Animation
+  className="opacity-0 intersect:animate-fade-up animate-duration-[1s]"
+>
+  <section
     class:list={[
-        "flex gap-8 lg:gap-16 items-center justify-center py-8 px-8 lg:px-16 bg-gradient-to-t flex-wrap-reverse lg:flex-nowrap lg:text-start text-center",
-        {
-            "h-[100vh]": fullHeight,
-            "bg-gradient gradient-from gradient-to": background,
-            "bg-image": backgroundImage,
-            "text-ns-base": background || backgroundImage,
-        },
+      "flex gap-8 lg:gap-16 items-center justify-center py-8 px-8 lg:px-16 bg-gradient-to-t flex-wrap-reverse lg:flex-nowrap lg:text-start text-center",
+      {
+        "h-[100vh]": fullHeight,
+        "bg-gradient gradient-from gradient-to": background,
+        "bg-image": backgroundImage,
+        "text-ns-base": background || backgroundImage,
+      },
     ]}
     style={`background-image: url(${backgroundImage}); background-size: cover; background-repeat: no-repeat;`}
->
+  >
     <div
-        class="flex flex-1 max-w-xl flex-col gap-6 lg:w-1/2 items-center lg:items-start"
+      class="flex flex-1 max-w-xl flex-col gap-6 lg:w-1/2 items-center lg:items-start"
     >
-        <h1 class="w-full text-4xl font-bold">
-            {Astro.props.title ?? "Space Apps"}
-        </h1>
-        <p class="whitespace-pre-wrap">
-            {
-                Astro.props.body ??
-                    "Space Apps es un proyecto de código abierto para crear aplicaciones de espacios en la nube."
-            }
-        </p>
-        <a
-            class="bg-ns-base w-fit px-8 py-4 text-ns-white"
-            href={href.url ?? "#"}
-        >
-            {Astro.props.button ?? "Inscríbete"}
-        </a>
+      <h1 class="w-full text-4xl font-bold">
+        {Astro.props.title ?? "Space Apps"}
+      </h1>
+      <p class="whitespace-pre-wrap">
+        {
+          Astro.props.body ??
+            "Space Apps es un proyecto de código abierto para crear aplicaciones de espacios en la nube."
+        }
+      </p>
+      <a
+        class="bg-ns-base w-fit px-8 py-4 text-ns-white"
+        href={href.url ?? "#"}
+      >
+        {Astro.props.button ?? "Inscríbete"}
+      </a>
     </div>
     <figure
-        class="flex mt-12 lg:mt-0 lg:w-full flex-1 max-w-[400px] min-w-[175px] flex-col items-center justify-center gap-4 lg:items-start"
+      class="flex mt-12 lg:mt-0 lg:w-full flex-1 max-w-[400px] min-w-[175px] flex-col items-center justify-center gap-4 lg:items-start"
     >
-        <img src={image.src} alt="Rocket" />
+      <img src={image.src} alt="Rocket" />
     </figure>
-</section>
+  </section>
+</Animation>
 
 <style define:vars={{ from, to }}>
-    .bg-gradient {
-        background-image: linear-gradient(to top, var(--tw-gradient-stops));
-    }
+  .bg-gradient {
+    background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  }
 
-    .gradient-from {
-        --tw-gradient-from: var(--from) var(--tw-gradient-from-position);
-        --tw-gradient-to: var(--to) var(--tw-gradient-to-position);
-        --tw-gradient-stops: var(--from), var(--to);
-    }
-    .gradient-to {
-        --tw-gradient-to: var(--to) var(--tw-gradient-to-position);
-    }
+  .gradient-from {
+    --tw-gradient-from: var(--from) var(--tw-gradient-from-position);
+    --tw-gradient-to: var(--to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--from), var(--to);
+  }
+  .gradient-to {
+    --tw-gradient-to: var(--to) var(--tw-gradient-to-position);
+  }
 </style>
