@@ -15,79 +15,190 @@ import MOVISTAR_logo from "../../assets/Patrocinadores/MOVISTAR_logo.png";
 import USFQ_logo from "../../assets/Patrocinadores/USFQ_logo.png";
 import WORKINGUP_logo from "../../assets/Patrocinadores/WORKINGUP_logo.png";
 ---
-<head>
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.1/dist/flowbite.min.css" />
-    <style>
-        .sponsors-section img {
-            max-width: 100px; /* Reduce el tamaño de las imágenes para móviles */
-        }
+<style>
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-item {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .carousel-item img {
+      max-width: 15%;
+      max-height: 15%;
+      object-fit: contain;
+    }
+  </style>
 
-        @media (min-width: 640px) {
-            .sponsors-section img {
-                max-width: 150px; /* Tamaño de las imágenes para pantallas más grandes */
-            }
-        }
-    </style>
-</head>
-<body>
-    <section class="sponsors-section py-10">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6 sm:mb-12">Patrocinadores</h2>
-            <h3 class="mb-6 sm:mb-10 text-base sm:text-lg">👨‍🚀 Ellos son los pioneros en <strong>impulsar y difundir nuestro mensaje</strong> sobre el crecimiento del <strong>desarrollo espacial</strong> en el Ecuador 🌌</h3>
-            <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                <!-- Carousel wrapper -->
-                <div class="relative h-56 overflow-hidden rounded-lg md:h-96 inset-y-0">
-                    <!-- Item 1 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-                            <img src={ASU_logo.src} class="block max-w-xs" alt="ASU">
-                            <img src={GEN_SPACE_logo.src} class="block max-w-xs" alt="GEN SPACE">
-                            <img src={CEDIA_logo.src} class="block max-w-xs" alt="CEDIA">
-                            <img src={MOVISTAR_logo.src} class="block max-w-xs" alt="MOVISTAR">
-                        </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-                            <img src={MINISTERIO_E_logo.src} class="block max-w-lg" alt="MINISTERIO E">
-                            <img src={MINISTERIO_PCEIP_logo.src} class="block max-w-lg" alt="MINISTERIO PCEIP">
-                            <img src={MINISTERIO_REMH_logo.src} class="block max-w-lg" alt="MINISTERIO REMH">
-                        </div>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-                            <img src={GUAYAQUIL_SPACE_logo.src} class="block max-w-xs" alt="GUAYAQUIL SPACE">
-                            <img src={ECUACAP_logo.src} class="block max-w-xs" alt="ECUACAP">
-                            <img src={BUENAVISTA_logo.src} class="block max-w-xs" alt="BUENAVISTA">
-                        </div>
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-                            <img src={WORKINGUP_logo.src} class="block max-w-xs" alt="WORKINGUP">
-                            <img src={AMCHAM_logo.src} class="block max-w-xs" alt="AMCHAM">
-                            <img src={AEI_logo.src} class="block max-w-xs" alt="AEI">
-                        </div>
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-                            <img src={USFQ_logo.src} class="block max-w-xs" alt="USFQ">
-                            <img src={LEVIATHAN_SPACE_logo.src} class="block max-w-xs" alt="LEVIATHAN SPACE">
-                        </div>
-                    </div>
-                </div>
-                <!-- Slider indicators -->
-                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                    <button type="button" class="w-3 h-3 rounded-full bg-black/70" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                    <button type="button" class="w-3 h-3 rounded-full bg-black/70" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                    <button type="button" class="w-3 h-3 rounded-full bg-black/70" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                    <button type="button" class="w-3 h-3 rounded-full bg-black/70" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                    <button type="button" class="w-3 h-3 rounded-full bg-black/70" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                </div>
+<section class="sponsors-section py-10">
+    <div class="max-w-max mx-auto">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold mb-6 sm:mb-12 mx-auto">Patrocinadores</h2>
+        <h3 class="mb-6 sm:mb-10 text-base sm:text-lg mx-auto">👨‍🚀 Ellos son los pioneros en <strong>impulsar y difundir nuestro mensaje</strong> sobre el crecimiento del <strong>desarrollo espacial</strong> en el Ecuador 🌌</h3>
+      </div>
+  
+      <div id="default-carousel" class="relative" data-carousel="static">
+        <!-- Contenedor del carrusel -->
+        <div class="carousel-container h-56 sm:h-64 xl:h-80 2xl:h-96">
+          <div class="carousel-wrapper">
+            <!-- Item 1 -->
+            <div class="carousel-item">
+              <div class="flex justify-center items-center space-x-4">
+                <img src={ASU_logo.src} alt="ASU" />
+                <img src={GEN_SPACE_logo.src} alt="GEN SPACE" />
+                <img src={CEDIA_logo.src} alt="CEDIA" />
+                <img src={MOVISTAR_logo.src} alt="MOVISTAR" />
+              </div>
             </div>
+            <!-- Item 2 -->
+            <div class="carousel-item">
+              <div class="flex justify-center items-center space-x-4">
+                <img src={MINISTERIO_E_logo.src} alt="MINISTERIO E" />
+                <img src={MINISTERIO_PCEIP_logo.src} alt="MINISTERIO PCEIP" />
+                <img src={MINISTERIO_REMH_logo.src} alt="MINISTERIO REMH" />
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="carousel-item">
+              <div class="flex justify-center items-center space-x-4">
+                <img src={GUAYAQUIL_SPACE_logo.src} alt="GUAYAQUIL SPACE" />
+                <img src={ECUACAP_logo.src} alt="ECUACAP" />
+                <img src={BUENAVISTA_logo.src} alt="BUENAVISTA" />
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="carousel-item">
+              <div class="flex justify-center items-center space-x-4">
+                <img src={WORKINGUP_logo.src} alt="WORKINGUP" />
+                <img src={AMCHAM_logo.src} alt="AMCHAM" />
+                <img src={AEI_logo.src} alt="AEI" />
+              </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="carousel-item">
+              <div class="flex justify-center items-center space-x-4">
+                <img src={USFQ_logo.src} alt="USFQ" />
+                <img src={LEVIATHAN_SPACE_logo.src} alt="LEVIATHAN SPACE" />
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-</body>
+        <!-- Indicadores del carrusel -->
+        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+        </div>
+        <!-- Controles del carrusel -->
+        <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span class="hidden">Previous</span>
+          </span>
+        </button>
+        <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span class="hidden">Next</span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const carousel = document.getElementById('default-carousel');
+          const wrapper = carousel?.querySelector('.carousel-wrapper');
+          const items = carousel?.querySelectorAll('.carousel-item');
+          const indicators = carousel?.querySelectorAll('[data-carousel-slide-to]');
+          const prevButton = carousel?.querySelector('[data-carousel-prev]');
+          const nextButton = carousel?.querySelector('[data-carousel-next]');
+          let currentIndex = 0;
+          let intervalId: NodeJS.Timeout;
+          
+          function showSlide(index: number) {
+            if (wrapper instanceof HTMLElement) {
+              wrapper.style.transition = 'transform 0.5s ease-in-out';
+              wrapper.style.transform = `translateX(-${index * 100}%)`;
+            }
+            indicators?.forEach((indicator, i) => {
+              indicator.setAttribute('aria-current', i === index ? 'true' : 'false');
+              indicator.classList.toggle('bg-white', i === index);
+              indicator.classList.toggle('bg-gray-400', i !== index);
+            });
+          }
+          
+          function showNextSlide() {
+            currentIndex = (currentIndex + 1) % (items?.length || 0);
+            if (currentIndex === 0 && wrapper instanceof HTMLElement) {
+              wrapper.style.transition = 'none'; // Disable transition for instant reset
+              wrapper.style.transform = `translateX(0)`;
+              setTimeout(() => {
+                wrapper.style.transition = 'transform 0.5s ease-in-out';
+                currentIndex = 0; // Ensure we stay at the first item after reset
+                showSlide(currentIndex);
+              }, 50); // Small delay to allow instant reset
+            } else {
+              showSlide(currentIndex);
+            }
+          }
+          
+          function showPrevSlide() {
+            currentIndex = (currentIndex - 1 + (items?.length || 0)) % (items?.length || 0);
+            showSlide(currentIndex);
+          }
+          
+          function startAutoSlide() {
+            intervalId = setInterval(showNextSlide, 5000);
+          }
+          
+          function stopAutoSlide() {
+            clearInterval(intervalId);
+          }
+      
+          nextButton?.addEventListener('click', () => {
+            stopAutoSlide();
+            showNextSlide();
+            startAutoSlide();
+          });
+      
+          prevButton?.addEventListener('click', () => {
+            stopAutoSlide();
+            showPrevSlide();
+            startAutoSlide();
+          });
+      
+          indicators?.forEach((indicator, i) => {
+            indicator.addEventListener('click', () => {
+              stopAutoSlide();
+              currentIndex = i;
+              showSlide(currentIndex);
+              startAutoSlide();
+            });
+          });
+      
+          carousel?.addEventListener('mouseenter', stopAutoSlide);
+          carousel?.addEventListener('mouseleave', startAutoSlide);
+      
+          showSlide(currentIndex);
+          startAutoSlide();
+        });
+      </script>
+      
