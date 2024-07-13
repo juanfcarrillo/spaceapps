@@ -20,7 +20,7 @@ export default defineConfig({
       imageTextSection: 'storyblok/ImageTextSectionSB',
       ctaFull: 'storyblok/CTAFullSB',
       faqSection: 'storyblok/FAQsectionSB',
-      carousel: 'storyblok/CarouselSB',
+      sponsors: 'storyblok/CarouselSB',
       competition: 'storyblok/CompetitionSB',
       cardSectionStyle2: 'storyblok/CardSection2SB',
       formSection: 'storyblok/FormSectionSB'

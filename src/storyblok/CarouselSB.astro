@@ -1,8 +1,31 @@
 ---
-import { storyblokEditable } from "@storyblok/astro";
+import {renderRichText, storyblokEditable } from "@storyblok/astro";
 import SponsorsSection from "../components/sections/SponsorsSection.astro";
 
 const { blok } = Astro.props;
+console.log(blok)
+
+
+// const sponsors = blok.dataSponsors.map((item: any) => ({
+//     url: item.url.url,
+//     image: item.image.filename
+// }));
+
+const sponsors = blok.dataSponsors.map((item:any) => (
+    item.carouselData.map((data:any) => ({
+      url: data.url.url,
+      image: data.image.filename,
+      alt: data.image.alt
+    }))
+  ));
+
+console.log(sponsors);
 ---
 
-<SponsorsSection {...storyblokEditable(blok)} />
+
+<SponsorsSection 
+{...storyblokEditable(blok)} 
+title = {blok.title}
+description = {renderRichText(blok.descriptions)}
+sponsors = {sponsors}/>
+
