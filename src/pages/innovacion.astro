@@ -1,0 +1,12 @@
+---
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+import Layout from '../layouts/Layout.astro';
+
+const content = await Astro.locals.getPageContent('innovacion');
+---
+
+<Layout title="innovacion">
+	<main class="w-full h-full scroll-smooth">
+		<StoryblokComponent blok={content} />
+	</main>
+</Layout>
