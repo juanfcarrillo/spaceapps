@@ -1,0 +1,27 @@
+---
+interface Props {
+  texts: string[];
+}
+
+const { texts } = Astro.props;
+
+const myVariants = {
+  red: "text-red-500",
+  green: "text-green-500",
+  blue: "text-blue-500",
+};
+
+const onHovermyVariants = {
+  red: "hover:bg-red-100",
+  green: "hover:bg-green-100",
+  blue: "hover:bg-blue-100",
+};
+
+const variantKeys = Object.keys(myVariants) as Array<keyof typeof myVariants>;
+
+---
+<div class="w-full mb-2 cursor-default">
+{ texts.map((text, index) => (
+  <p  class={`inline-block p-2 text-sm rounded-xl ${onHovermyVariants[variantKeys[index % variantKeys.length]]}`}><span class={`${myVariants[variantKeys[index % variantKeys.length]]} border-`}>#</span>{text}</p>
+))}
+</div>

@@ -1,0 +1,14 @@
+---
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+import Layout from '../layouts/Layout.astro';
+import GridCardsFeed from '../components/sections/GridCardsFeed.astro';
+
+// const content = await Astro.locals.getPageContent('');
+---
+
+<Layout title="Feed Post">
+	<main class="w-full h-full scroll-smooth">
+		<!-- <StoryblokComponent blok={content} /> -->
+		 <GridCardsFeed />
+	</main>
+</Layout>
