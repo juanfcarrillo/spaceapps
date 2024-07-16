@@ -1,0 +1,45 @@
+---
+import SectionLayout from "../../layouts/SectionLayout.astro";
+import UserBadge from "../molecules/UserBadge.astro";
+
+interface User {
+  image: string;
+  name: string;
+  date: string;
+}
+
+interface Props {
+  title: string;
+  link: string;
+  subtitle: string;
+  summary: string;
+  image: string;
+  user: User;
+}
+
+const { title, link, subtitle, summary, image, user } = Astro.props;
+---
+
+<SectionLayout>
+  <div
+    class="flex justify-center items-center flex-col w-2/4 p-4 rounded-lg shadow-2xl"
+  >
+    <UserBadge name={user.name} date={user.date} image={user.image}>
+      <div class="w-5/6">
+        <h3 class="w-full text-3xl font-bold py-4">
+          <a class="cursor-pointer" href={link}>{title}</a>
+        </h3>
+        <p class="w-full pb-4">{subtitle}</p>
+
+        <img
+          src={image}
+          alt=""
+          class="w-full max-h-40 object-cover rounded-lg mb-4"
+        />
+
+        <!-- TODO: MAKE RICH TEXT -->
+        <p class="" set:html={summary} />
+      </div>
+    </UserBadge>
+  </div>
+</SectionLayout>
