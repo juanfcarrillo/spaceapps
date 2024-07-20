@@ -12,7 +12,8 @@ const items = blok.items.map((item: any) => ({
 
 const linkButton = blok.button ? blok.button.map((item: any) => ({
     link: item.link.url,
-    textContent: item.textContent
+    textContent: item.textContent,
+    blank: item.link.target
 })) : null;
 ---
 

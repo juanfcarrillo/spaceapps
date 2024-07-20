@@ -6,6 +6,7 @@ import Card from '../molecules/Card.astro';
 interface linkButton{
     link:string;
     textContent:string;
+    blank: string;
 }
 
 interface Props {
@@ -37,11 +38,11 @@ const { title, subtitle, extra , items, linkButton} = Astro.props;
         <ul class="flex items-center justify-center h-full">
             {linkButton.map((item) =>
               (
-                <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-full md:w-1/6 mr-1">
-                <a href={item.link}>
+                  <a href={item.link} target={item.blank} class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-full md:w-1/6 mr-1 text-center">
+                    <button class="">
                     {item.textContent}
-                </a>
                 </button>
+                </a>
               ))
             }
         </ul>
