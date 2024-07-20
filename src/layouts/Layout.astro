@@ -1,5 +1,6 @@
 ---
 import NavBar from "../components/organisms/NavBar.astro";
+import Footer from "../components/sections/Footer.astro";
 
 interface Props {
 	title: string;
@@ -36,6 +37,7 @@ const { title, blank } = Astro.props;
 	<body class="font-sans flex h-full flex-col">
 		{!blank && <NavBar transparent />}
 		<slot />
+		<Footer />
 	</body>
 </html>
 
