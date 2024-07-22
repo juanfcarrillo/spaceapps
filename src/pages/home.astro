@@ -6,7 +6,7 @@ const content = await Astro.locals.getPageContent('home');
 ---
 
 <Layout title="home">
-	<main class="w-full h-full scroll-smooth">
+	<main>
 		<StoryblokComponent blok={content} />
 	</main>
 </Layout>
