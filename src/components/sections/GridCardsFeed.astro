@@ -1,0 +1,33 @@
+---
+import CardFeed from "../../components/organisms/CardFeed.astro";
+import Divider from "../../components/atoms/Divider.astro";
+
+interface User {
+  image: string;
+  name: string;
+  date: string;
+}
+
+interface Content {
+  title: string;
+  link: string;
+  hashtag: string[];
+  summary: string;
+  image: string;
+  user: User;
+}
+
+interface Props {
+  contents: Content[];
+}
+
+const { contents } = Astro.props;
+---
+
+<section class="mt-[104px] w-full flex flex-col justify-center items-center">
+  <h2 class="text-center text-3xl font-bold p-4">Space apps Post</h2>
+  <Divider />
+  <div class="w-11/12 grid md:grid-cols-2 items-center gap-8 py-8">
+    {contents.map((item: Content) => <CardFeed content={item}/>)}
+  </div>
+</section>

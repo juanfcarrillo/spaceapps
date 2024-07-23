@@ -1,0 +1,12 @@
+---
+interface Props {
+  text: string;
+  className?: string;
+}
+
+const { text, className } = Astro.props;
+---
+
+<p class={`inline-block p-2 text-sm rounded-xl cursor-pointer ${className}`}>
+  <span class={className}>#</span>{text}
+</p>

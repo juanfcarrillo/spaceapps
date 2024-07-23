@@ -1,0 +1,28 @@
+---
+import Chip from "../atoms/Chip.astro";
+
+interface Props {
+  texts: string[];
+}
+
+const { texts } = Astro.props;
+
+const variants = {
+  red: "text-red-500 hover:bg-red-100",
+  green: "text-green-500 hover:bg-green-100",
+  blue: "text-blue-500 hover:bg-blue-100",
+};
+
+const variantKeys = Object.keys(variants) as Array<keyof typeof variants>;
+---
+
+<div class="w-full mb-2 cursor-default">
+  {
+    texts.map((text, index) => (
+      <Chip
+        text={text}
+        className={variants[variantKeys[index % variantKeys.length]]}
+      />
+    ))
+  }
+</div>
