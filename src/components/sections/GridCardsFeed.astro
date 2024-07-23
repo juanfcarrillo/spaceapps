@@ -2,89 +2,32 @@
 import CardFeed from "../../components/organisms/CardFeed.astro";
 import Divider from "../../components/atoms/Divider.astro";
 
-const dataExample = [
-  {
-    title: "Introduction to TypeScript",
-    link: "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    hashtag: ["Test1"],
-    summary:
-      "This article provides a comprehensive introduction to TypeScript, including its key features and benefits.",
-    image:
-      "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    user: {
-      image:
-        "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-      name: "John Doe",
-      date: "2024-07-15",
-    },
-  },
-  {
-    title: "Advanced React Techniques",
-    link: "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    hashtag: ["Test2", "Test3", "Test4", "Test5", "Test6", "Test7", "Test121321"],
-    summary:
-      "Explore advanced techniques in React development to build more complex and efficient applications.",
-    image:
-      "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    user: {
-      image:
-        "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-      name: "Jane Smith",
-      date: "2024-07-10",
-    },
-  },
-  {
-    title: "Machine Learning with Python",
-    link: "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    hashtag: ["Test2", "Test3"],
-    summary:
-      "A detailed guide on how to implement various machine learning algorithms using Python libraries.",
-    image:
-      "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    user: {
-      image:
-        "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-      name: "Alice Johnson",
-      date: "2024-06-30",
-    },
-  },
-  {
-    title: "Machine Learning with Python",
-    link: "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    hashtag: ["Test2", "Test3"],
-    summary:
-      "A detailed guide on how to implement various machine learning algorithms using Python libraries.",
-    image:
-      "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    user: {
-      image:
-        "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-      name: "Alice Johnson",
-      date: "2024-06-30",
-    },
-  },
-  {
-    title: "Machine Learning with Python",
-    link: "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    hashtag: ["Test2", "Test3"],
-    summary:
-      "A detailed guide on how to implement various machine learning algorithms using Python libraries.",
-    image:
-      "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-    user: {
-      image:
-        "https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic_1468962.jpg?w=1600&h=900",
-      name: "Alice Johnson",
-      date: "2024-06-30",
-    },
-  },
-];
+interface User {
+  image: string;
+  name: string;
+  date: string;
+}
+
+interface Content {
+  title: string;
+  link: string;
+  hashtag: string[];
+  summary: string;
+  image: string;
+  user: User;
+}
+
+interface Props {
+  contents: Content[];
+}
+
+const { contents } = Astro.props;
 ---
 
 <section class="mt-[104px] w-full flex flex-col justify-center items-center">
   <h2 class="text-center text-3xl font-bold p-4">Space apps Post</h2>
   <Divider />
   <div class="w-11/12 grid md:grid-cols-2 items-center gap-8 py-8">
-    {dataExample.map((item) => <CardFeed content={item} />)}
+    {contents.map((item: Content) => <CardFeed content={item}/>)}
   </div>
 </section>

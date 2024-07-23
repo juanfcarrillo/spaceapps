@@ -1,26 +1,6 @@
 ---
-import SectionLayout from "../../layouts/SectionLayout.astro";
 import UserBadge from "../molecules/UserBadge.astro";
-import Chip from "../molecules/Chip.astro";
-
-interface User {
-  image: string;
-  name: string;
-  date: string;
-}
-
-interface Content {
-  title: string;
-  link: string;
-  hashtag: string[];
-  summary: string;
-  image: string;
-  user: User;
-}
-
-interface Props {
-  content: Content;
-}
+import Chip from "../molecules/Chips.astro";
 
 const { content } = Astro.props;
 ---
