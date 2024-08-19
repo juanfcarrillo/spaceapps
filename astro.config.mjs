@@ -30,8 +30,5 @@ export default defineConfig({
       region: 'us' // optional,  or 'eu' (default)
     }
   })],
-  redirects: {
-    '/': '/colegio'
-  },
   adapter: vercel()
 });
