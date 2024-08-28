@@ -27,10 +27,13 @@ const { title, blank } = Astro.props;
 		<meta name="author" content="Space Apps" />
 	</head>
 
+	<slot name="meta" />
+
 	<meta property="og:title" content={title} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://spaceapps.pages.dev" />
 	<meta property="og:image" content="https://spaceapps.pages.dev/3DRocket.png" />
+
 
 	<title>Space Apps</title>
 
