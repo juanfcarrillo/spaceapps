@@ -28,10 +28,10 @@ export default defineConfig({
     apiOptions: {
       // Choose your Storyblok space region
       region: 'us' // optional,  or 'eu' (default)
-    }
+    },
   })],
   redirects: {
-    '/': '/colegio'
+    '/': '/home'
   },
   adapter: vercel()
 });

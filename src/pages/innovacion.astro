@@ -6,6 +6,9 @@ const content = await Astro.locals.getPageContent('innovacion');
 ---
 
 <Layout title="innovacion">
+	<Fragment slot="meta">
+		<script src="https://ezsupport.vercel.app/js/bundled-script.js" data-language="es" data-chatId=2647bd22-79f3-42e9-90a8-493285b3cbb8 defer></script>
+	</Fragment>
 	<main>
 		<StoryblokComponent blok={content} />
 	</main>
