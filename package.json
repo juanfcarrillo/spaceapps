@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.7.2",
+    "@hotjar/browser": "^1.0.9",
     "@storyblok/astro": "^4.1.0",
     "astro": "^4.10.1",
     "tailwindcss": "^3.4.4",

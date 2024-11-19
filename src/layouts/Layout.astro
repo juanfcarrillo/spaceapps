@@ -7,6 +7,13 @@ interface Props {
 	blank?: boolean;
 }
 const { title, blank } = Astro.props;
+
+import Hotjar from '@hotjar/browser';
+
+const siteId = 5213522;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
 ---
 
 <!doctype html>
